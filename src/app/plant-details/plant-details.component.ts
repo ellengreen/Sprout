@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Plants } from '../plants';
 
 @Component({
   selector: 'app-plant-details',
   templateUrl: './plant-details.component.html',
-  styleUrls: ['./plant-details.component.scss']
+  styleUrls: ['./plant-details.component.css']
 })
 export class PlantDetailsComponent implements OnInit {
 
-  constructor() { }
+  plant;
+  constructor(
+    private route:
+    ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.plant = Plants[+params.get('plantId')];
+    })
   }
 
 }

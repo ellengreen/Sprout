@@ -10,7 +10,10 @@ const routes: Routes = [
   },
   {
     path: 'plants', component: PlantListComponent
-  }
+  },
+  {
+    path: 'plants/:plantId', component: PlantDetailsComponent
+  },
 ];
 
 @NgModule({
