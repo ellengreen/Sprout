@@ -10,7 +10,7 @@
   </ng-container>
 
 -->
-
+<!---->
 <h2>Living Room</h2>
 <ng-container *ngFor="let plant of plants">
   <a *ngIf="plant.location === 'Living Room'"
@@ -44,6 +44,8 @@
   </a>
 </ng-container>
 
+
+<!-- DETAILS FOR SELECTED PLANT-->
 <div *ngIf="selectedPlant">
   <h2>{{selectedPlant.name | uppercase }} Profile</h2>
     <div>
