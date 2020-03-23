@@ -1,1 +1,26 @@
-<p>map-view works!</p>
+<h1>Shop Local</h1>
+
+<agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    >
+
+    <agm-marker
+        (markerClick)="onSelect(marker)"
+        *ngFor="let marker of markers; index as markerId"
+        [latitude]="marker.lat"
+        [longitude]="marker.lng">
+    </agm-marker>
+    
+</agm-map>
+
+<div *ngIf="selectedMarker">
+    <h2>{{selectedMarker.label}}</h2>
+    <br>
+    Address: {{selectedMarker.address}}
+    <br>
+    Phone: {{selectedMarker.phone}}
+    <br>
+    Website: {{selectedMarker.website}}       
+</div>

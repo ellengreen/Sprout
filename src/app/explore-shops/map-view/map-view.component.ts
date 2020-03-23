@@ -13,13 +13,13 @@ export class MapViewComponent implements OnInit {
   lng = -90.196091;
   zoom = 11;
 
-  marker = Marker; 
+  markers = Marker; 
   selectedMarker; 
 
   onSelect(marker) : void {
     this.selectedMarker = marker;
   }
-  
+
   constructor() { }
 
   ngOnInit() {
