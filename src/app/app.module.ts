@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,10 @@ import { MapViewComponent } from './explore-shops/map-view/map-view.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAK4YYTu0SjoAN2WBwqv7B-QPNWmbn9YWs'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
