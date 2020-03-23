@@ -1,1 +1,48 @@
-<p>plant-list works!</p>
+<h1>My Plants</h1>
+
+ <h2>Living Room</h2>
+  <ng-container *ngFor="let plant of plants; index as plantId">
+    <a [routerLink]="['/plants', plantId]" *ngIf="plant.location === 'Living Room'">
+      <ul>
+        <li>{{plant.name}}</li>
+      </ul>
+    </a>
+  </ng-container>
+
+<h2>Bedroom</h2>
+  <ng-container *ngFor="let plant of plants; index as plantId">
+    <a [routerLink]="['/plants', plantId]" *ngIf="plant.location === 'Bedroom'">
+      <ul>
+        <li>{{plant.name}}</li>
+      </ul>
+    </a>
+ </ng-container>
+
+ <h2>Office</h2>
+  <ng-container *ngFor="let plant of plants; index as plantId">
+    <a [routerLink]="['/plants', plantId]" *ngIf="plant.location === 'Office'">
+      <ul>
+        <li>{{plant.name}}</li>
+      </ul>
+    </a>
+ </ng-container>
+
+ <h2>Bathroom</h2>
+  <ng-container *ngFor="let plant of plants; index as plantId">
+    <a [routerLink]="['/plants', plantId]" *ngIf="plant.location === 'Bathroom'">
+      <ul>
+        <li>{{plant.name}}</li>
+      </ul>
+    </a>
+ </ng-container>
+
+ <h2>Kitchen</h2>
+  <ng-container *ngFor="let plant of plants; index as plantId">
+    <a [routerLink]="['/plants', plantId]" *ngIf="plant.location === 'Kitchen'">
+      <ul>
+        <li>{{plant.name}}</li>
+      </ul>
+    </a>
+ </ng-container>
+
+ <button type="button" class="btn btn-dark btn-circle btn-xl">Add A Plant!</button>
