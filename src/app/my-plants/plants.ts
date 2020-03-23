@@ -1,4 +1,6 @@
-export const Plants = [
+import { Plant } from './plant';
+
+export const PLANTS: Plant[] = [
     {
         name: 'ZZ Plant',
         location: 'Living Room',

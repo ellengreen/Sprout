@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Plants } from '../plants';
+import { PLANTS } from '../plants';
 
 @Component({
   selector: 'app-plant-details',
@@ -17,7 +17,7 @@ export class PlantDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.plant = Plants[+params.get('plantId')];
+      this.plant = PLANTS[+params.get('plantId')];
     })
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Plants } from '../plants';
+import { Plant } from '../plant';
+import { PLANTS } from '../plants';
 
 @Component({
   selector: 'app-plant-list',
@@ -8,10 +9,15 @@ import { Plants } from '../plants';
 })
 export class PlantListComponent implements OnInit {
 
-  plants = Plants;
+  plants = PLANTS;
+  selectedPlant: Plant;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(plant: Plant) : void {
+    this.selectedPlant = plant;
   }
 
 }
