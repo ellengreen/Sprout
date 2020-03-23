@@ -4,22 +4,36 @@ export const PLANTS: Plant[] = [
     {
         name: 'ZZ Plant',
         location: 'Living Room',
-        light: 'low light',
-        water: 'bi-weekly',
+        light: 'Low',
+        water: 'Bi-Weekly',
         date: 'June 2019'
     },
     {
-        name: 'Cacti',
-        location: 'Bedroom',
-        light: 'direct light',
-        water: 'monthly',
+        name: "Burrow's Tail",
+        location: 'Living Room',
+        light: 'Direct',
+        water: 'Monthly',
         date: 'August 2019'
     },
     {
-        name: 'Knives',
+        name: 'Neon Pothos',
         location: 'Bedroom',
-        light: 'direct light',
-        water: 'monthly',
-        date: 'August 2019'
+        light: 'Direct',
+        water: 'Weekly',
+        date: 'July 2018'
+    },
+    {
+        name: 'Snake Plant',
+        location: 'Living Room',
+        light: 'Bright',
+        water: 'Bi-Weekly',
+        date: 'July 2018'
+    },
+    {
+        name: 'Golden Pothos',
+        location: 'Kitchen',
+        light: 'Direct',
+        water: 'Weekly',
+        date: 'July 2018'
     }
 ];
