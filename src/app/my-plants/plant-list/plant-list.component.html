@@ -1,4 +1,5 @@
-<h1>My Plants</h1>
+
+<div class="container">
 <!-- 
  <h2>Living Room</h2>
   <ng-container *ngFor="let plant of plants; index as plantId">
@@ -11,53 +12,57 @@
 
 -->
 <!---->
-<h2>Living Room</h2>
-<ng-container *ngFor="let plant of plants">
-  <a *ngIf="plant.location === 'Living Room'"
-    [class.selected]="plant === selectedPlant"
-    (click)="onSelect(plant)">
-    <ul>
-      <li>{{plant.name}}</li>
-    </ul>
-  </a>
-</ng-container>
+  <div class="row">
+    <div class="col-md-6">
+      <h1>My Plants</h1>
+      <h2>Living Room</h2>
+      <ng-container *ngFor="let plant of plants">
+        <a *ngIf="plant.location === 'Living Room'"
+          [class.selected]="plant === selectedPlant"
+          (click)="onSelect(plant)">
+          <ul>
+            <li>{{plant.name}}</li>
+          </ul>
+        </a>
+      </ng-container>
 
-<h2>Bedroom</h2>
-<ng-container *ngFor="let plant of plants">
-  <a *ngIf="plant.location === 'Bedroom'"
-    [class.selected]="plant === selectedPlant"
-    (click)="onSelect(plant)">
-    <ul>
-      <li>{{plant.name}}</li>
-    </ul>
-  </a>
-</ng-container>
+      <h2>Bedroom</h2>
+      <ng-container *ngFor="let plant of plants">
+        <a *ngIf="plant.location === 'Bedroom'"
+          [class.selected]="plant === selectedPlant"
+          (click)="onSelect(plant)">
+          <ul>
+            <li>{{plant.name}}</li>
+          </ul>
+        </a>
+      </ng-container>
 
-<h2>Kitchen</h2>
-<ng-container *ngFor="let plant of plants">
-  <a *ngIf="plant.location === 'Kitchen'"
-    [class.selected]="plant === selectedPlant"
-    (click)="onSelect(plant)">
-    <ul>
-      <li>{{plant.name}}</li>
-    </ul>
-  </a>
-</ng-container>
-
-
-<!-- DETAILS FOR SELECTED PLANT-->
-<div *ngIf="selectedPlant">
-  <h2>{{selectedPlant.name | uppercase }} Profile</h2>
-    <div>
-      Placed in {{selectedPlant.location}}
-      <br>
-      Light Level: {{selectedPlant.light}}
-      <br>
-      Watering Schedule: {{selectedPlant.water}}
-      <br>
-      Acquired in {{selectedPlant.date}}
-    </div>
+      <h2>Kitchen</h2>
+      <ng-container *ngFor="let plant of plants">
+        <a *ngIf="plant.location === 'Kitchen'"
+          [class.selected]="plant === selectedPlant"
+          (click)="onSelect(plant)">
+          <ul>
+            <li>{{plant.name}}</li>
+          </ul>
+        </a>
+      </ng-container>
+  
 </div>
 
+  <!-- DETAILS FOR SELECTED PLANT-->
+  <div *ngIf="selectedPlant" class="col-md-6">
+    <h2>{{selectedPlant.name | uppercase }} Profile</h2>
+      <div>
+        Placed in {{selectedPlant.location}}
+        <br>
+        Light Level: {{selectedPlant.light}}
+        <br>
+        Watering Schedule: {{selectedPlant.water}}
+        <br>
+        Acquired in {{selectedPlant.date}}
+      </div>
+  </div>
+</div>
 <br>
- <button type="button" class="btn btn-dark btn-circle btn-xl">Add A Plant!</button>
+ <!-- <button type="button" class="btn btn-dark btn-circle btn-xl">Add A Plant!</button> -->

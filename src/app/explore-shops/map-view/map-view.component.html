@@ -1,26 +1,35 @@
-<h1>Shop Local</h1>
+<div class="jumbotron">
+    <h1>Shop Local</h1>
+</div>
 
-<agm-map
-    [latitude]="lat"
-    [longitude]="lng"
-    [zoom]="zoom"
-    >
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+            <agm-map
+                [latitude]="lat"
+                [longitude]="lng"
+                [zoom]="zoom"
+                [styles]="styles"
+                >
 
-    <agm-marker
-        (markerClick)="onSelect(marker)"
-        *ngFor="let marker of markers; index as markerId"
-        [latitude]="marker.lat"
-        [longitude]="marker.lng">
-    </agm-marker>
-    
-</agm-map>
+                <agm-marker
+                    (markerClick)="onSelect(marker)"
+                    *ngFor="let marker of markers; index as markerId"
+                    [latitude]="marker.lat"
+                    [longitude]="marker.lng">
+                </agm-marker>
+                
+            </agm-map>
+        </div>
 
-<div *ngIf="selectedMarker">
-    <h2>{{selectedMarker.label}}</h2>
-    <br>
-    Address: {{selectedMarker.address}}
-    <br>
-    Phone: {{selectedMarker.phone}}
-    <br>
-    Website: {{selectedMarker.website}}       
+        <div class="col-sm-5" id="shop" *ngIf="selectedMarker">
+            <h2>{{selectedMarker.label}}</h2>
+            <br>
+            Address: {{selectedMarker.address}}
+            <br>
+            Phone: {{selectedMarker.phone}}
+            <br>
+            Website: {{selectedMarker.website}}       
+        </div>
+    </div>
 </div>
