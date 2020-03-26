@@ -19,7 +19,7 @@ import { MapViewComponent } from './explore-shops/map-view/map-view.component';
     BrowserModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAK4YYTu0SjoAN2WBwqv7B-QPNWmbn9YWs'
+      apiKey: 'AIzaSyBKi-ZfdztsvTQAWMjq8WUF2lwPhzvVcM0'
     })
   ],
   providers: [],
