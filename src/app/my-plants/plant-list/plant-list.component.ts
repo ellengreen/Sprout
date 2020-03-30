@@ -8,7 +8,6 @@ import { PLANTS } from '../plants';
   styleUrls: ['./plant-list.component.scss']
 })
 export class PlantListComponent implements OnInit {
-
   plants = PLANTS;
   selectedPlant: Plant;
   constructor() { }
