@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Plant } from '../plant';
 import { PLANTS } from '../plants';
 
@@ -8,11 +8,25 @@ import { PLANTS } from '../plants';
   styleUrls: ['./plant-list.component.scss']
 })
 export class PlantListComponent implements OnInit {
-  plants = PLANTS;
+  plantList = PLANTS;
+  @Input() plants: Plant[];
+
   selectedPlant: Plant;
+  newName: string;
+  newLocation: string;
+  newLight: string;
+  newWater: string;
+  newDate: string;
+
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addPlant(){
+    let plant = new Plant(this.newName, this.newLocation, this.newLight, this.newWater, this.newDate)
+    this.plantList.push(plant);
   }
 
   onSelect(plant: Plant) : void {

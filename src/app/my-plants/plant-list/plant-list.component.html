@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-md-6">
       <h2>Living Room</h2>
-      <ng-container *ngFor="let plant of plants">
+      <ng-container *ngFor="let plant of plantList">
         <a *ngIf="plant.location === 'Living Room'"
           [class.selected]="plant === selectedPlant"
           (click)="onSelect(plant)">
@@ -29,7 +29,7 @@
       </ng-container>
 
       <h2>Bedroom</h2>
-      <ng-container *ngFor="let plant of plants">
+      <ng-container *ngFor="let plant of plantList">
         <a *ngIf="plant.location === 'Bedroom'"
           [class.selected]="plant === selectedPlant"
           (click)="onSelect(plant)">
@@ -40,7 +40,7 @@
       </ng-container>
 
       <h2>Kitchen</h2>
-      <ng-container *ngFor="let plant of plants">
+      <ng-container *ngFor="let plant of plantList">
         <a *ngIf="plant.location === 'Kitchen'"
           [class.selected]="plant === selectedPlant"
           (click)="onSelect(plant)">
@@ -68,3 +68,11 @@
 </div>
 <br>
  <!-- <button type="button" class="btn btn-dark btn-circle btn-xl">Add A Plant!</button> -->
+
+ <h3>Add a Plant Here</h3>
+    <p>Name: <input [(ngModel)]="newName" type="text"></p>
+    <p>Location: <input [(ngModel)]="newLocation" type="text"></p>
+    <p>Light:<input [(ngModel)]="newLight" type="text"></p>    
+    <p>Water: <input [(ngModel)]="newWater" type="text"></p>
+    <p>Date: <input [(ngModel)]="newDate" type="text"></p>
+<button class="btn btn-dark" (click)="addPlant()">Click here to add the plant!</button>
