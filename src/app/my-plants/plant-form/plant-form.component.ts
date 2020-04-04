@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
-import { Plant } from '../plant';
 import { PLANTS } from '../plants';
 
 @Component({
@@ -22,7 +21,8 @@ export class PlantFormComponent {
       name: ['', Validators.required ],
       location: ['', Validators.required ],
       light: ['', Validators.required ],
-      water: ['', Validators.required ]
+      water: ['', Validators.required ],
+      date: ['', Validators.required ]
    });
  }
 

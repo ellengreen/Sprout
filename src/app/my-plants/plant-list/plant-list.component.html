@@ -39,6 +39,7 @@
   <button class="btn btn-primary"
     (click)="openModal(template)">Add A New Plant!
   </button>
+  
   <ng-template #template>
     <div class="modal-header">
       <h4 class="modal-title pull-left">New Plant</h4>
@@ -54,31 +55,7 @@
     </div>
   </ng-template>
 
-  <!-- <ng-template #template>
-    <div class="modal-header">
-      <h4 class="modal-title pull-left">New Plant</h4>
-        <button type="button" 
-          class="close pull-right" 
-          (click)="modalRef.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div> 
-
-    <div class="modal-body">
-      <p>Name: <input [(ngModel)]="newName" type="text"></p>
-      <p>Location: <input [(ngModel)]="newLocation" type="text"></p>
-      <p>Light: <input [(ngModel)]="newLight" type="text"></p>    
-      <p>Water: <input [(ngModel)]="newWater" type="text"></p>
-      <p>Date: <input [(ngModel)]="newDate" type="text"></p>
-      <button class="btn btn-dark" (click)="addPlant()">
-        Submit
-      </button>
-    </div>
-  </ng-template> -->
-
 </div>
-
-<!-- <app-plant-form></app-plant-form> -->
 
 
 

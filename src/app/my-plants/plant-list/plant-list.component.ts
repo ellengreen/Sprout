@@ -12,14 +12,8 @@ import { FormGroup } from '@angular/forms';
 })
 export class PlantListComponent implements OnInit {
   plantList = PLANTS;
-  @Input() plants: Plant[];
 
   selectedPlant: Plant;
-  newName: string;
-  newLocation: string;
-  newLight: string;
-  newWater: string;
-  newDate: string;
 
   modalRef: BsModalRef;
 
@@ -36,15 +30,10 @@ export class PlantListComponent implements OnInit {
   ngOnInit() {
   }
 
-  // addPlant(){
-  //   let plant = new Plant(this.newName, this.newLocation, this.newLight, this.newWater, this.newDate)
-  //   this.plantList.push(plant);
-  // }
 
   onSelect(plant: Plant) : void {
     this.selectedPlant = plant;
   }
-
 
   angForm: FormGroup;
   
