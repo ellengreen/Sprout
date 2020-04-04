@@ -12,12 +12,16 @@ export class PlantFormComponent {
 
   plantList = PLANTS;
   rooms = [
-    'Kitchen', 'Bedroom', 'Living Room', 'Office'
-  ]
-
+    'Kitchen', 
+    'Bedroom', 
+    'Living Room', 
+    'Office'
+  ];
   angForm: FormGroup;
-  constructor (private formBuilder: FormBuilder){
+
+  constructor (private formBuilder: FormBuilder) {
   }
+
   ngOnInit() : void {
     this.angForm = this.formBuilder.group({
       name: ["", [Validators.required]],
@@ -25,34 +29,19 @@ export class PlantFormComponent {
       light: ["", [Validators.required]],
       water: ["", [Validators.required]],
       date: ["", [Validators.required]]
-    })
-  }
+    });
+  };
+
+  //Adds user input to Plant List (does not persist)
+  //Calls resetForm to clear input fields
   addPlant() {
     this.plantList.push(this.angForm.value);
     this.resetForm(this.angForm)
   }
 
+  //Clears input fields after a submission
   resetForm(form: FormGroup){
     form.reset();
   }
-//   angForm: FormGroup;
-//   constructor(private fb: FormBuilder) {
-//    this.createForm();
-//  }
-
-//   createForm() {
-//    this.angForm = this.fb.group({
-//       name: ['', Validators.required ],
-//       location: ['', Validators.required ],
-//       light: ['', Validators.required ],
-//       water: ['', Validators.required ],
-//       date: ['', Validators.required ]
-//    });
-//  }
-
-//  addPlant() {
-//    this.plantList.push(this.angForm.value);
-//  }
-
 
 }
