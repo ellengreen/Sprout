@@ -11,24 +11,48 @@ import { PLANTS } from '../plants';
 export class PlantFormComponent {
 
   plantList = PLANTS;
+  rooms = [
+    'Kitchen', 'Bedroom', 'Living Room', 'Office'
+  ]
+
   angForm: FormGroup;
-  constructor(private fb: FormBuilder) {
-   this.createForm();
- }
+  constructor (private formBuilder: FormBuilder){
+  }
+  ngOnInit() : void {
+    this.angForm = this.formBuilder.group({
+      name: ["", [Validators.required]],
+      location: [null, [Validators.required]],
+      light: ["", [Validators.required]],
+      water: ["", [Validators.required]],
+      date: ["", [Validators.required]]
+    })
+  }
+  addPlant() {
+    this.plantList.push(this.angForm.value);
+    this.resetForm(this.angForm)
+  }
 
-  createForm() {
-   this.angForm = this.fb.group({
-      name: ['', Validators.required ],
-      location: ['', Validators.required ],
-      light: ['', Validators.required ],
-      water: ['', Validators.required ],
-      date: ['', Validators.required ]
-   });
- }
+  resetForm(form: FormGroup){
+    form.reset();
+  }
+//   angForm: FormGroup;
+//   constructor(private fb: FormBuilder) {
+//    this.createForm();
+//  }
 
- addPlant() {
-   this.plantList.push(this.angForm.value);
- }
+//   createForm() {
+//    this.angForm = this.fb.group({
+//       name: ['', Validators.required ],
+//       location: ['', Validators.required ],
+//       light: ['', Validators.required ],
+//       water: ['', Validators.required ],
+//       date: ['', Validators.required ]
+//    });
+//  }
+
+//  addPlant() {
+//    this.plantList.push(this.angForm.value);
+//  }
 
 
 }
