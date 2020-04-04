@@ -1,15 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+import { Plant } from '../plant';
+import { PLANTS } from '../plants';
 
 @Component({
   selector: 'app-plant-form',
   templateUrl: './plant-form.component.html',
   styleUrls: ['./plant-form.component.scss']
 })
-export class PlantFormComponent implements OnInit {
 
-  constructor() { }
+export class PlantFormComponent {
 
-  ngOnInit() {
-  }
+  plantList = PLANTS;
+  angForm: FormGroup;
+  constructor(private fb: FormBuilder) {
+   this.createForm();
+ }
+
+  createForm() {
+   this.angForm = this.fb.group({
+      name: ['', Validators.required ],
+      location: ['', Validators.required ],
+      light: ['', Validators.required ],
+      water: ['', Validators.required ]
+   });
+ }
+
+ addPlant() {
+   this.plantList.push(this.angForm.value);
+ }
+
 
 }

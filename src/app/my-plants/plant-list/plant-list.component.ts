@@ -2,6 +2,7 @@ import { Component, OnInit, Input, TemplateRef} from '@angular/core';
 import { Plant } from '../plant';
 import { PLANTS } from '../plants';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -35,13 +36,19 @@ export class PlantListComponent implements OnInit {
   ngOnInit() {
   }
 
-  addPlant(){
-    let plant = new Plant(this.newName, this.newLocation, this.newLight, this.newWater, this.newDate)
-    this.plantList.push(plant);
-  }
+  // addPlant(){
+  //   let plant = new Plant(this.newName, this.newLocation, this.newLight, this.newWater, this.newDate)
+  //   this.plantList.push(plant);
+  // }
 
   onSelect(plant: Plant) : void {
     this.selectedPlant = plant;
   }
 
+
+  angForm: FormGroup;
+  
+  addPlant() {
+    this.plantList.push(this.angForm.value);
+  }
 }

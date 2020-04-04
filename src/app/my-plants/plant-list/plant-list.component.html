@@ -39,8 +39,22 @@
   <button class="btn btn-primary"
     (click)="openModal(template)">Add A New Plant!
   </button>
-
   <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">New Plant</h4>
+        <button type="button" 
+          class="close pull-right" 
+          (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div> 
+
+    <div class="modal-body">
+      <app-plant-form></app-plant-form>
+    </div>
+  </ng-template>
+
+  <!-- <ng-template #template>
     <div class="modal-header">
       <h4 class="modal-title pull-left">New Plant</h4>
         <button type="button" 
@@ -60,9 +74,11 @@
         Submit
       </button>
     </div>
-  </ng-template>
+  </ng-template> -->
 
 </div>
+
+<!-- <app-plant-form></app-plant-form> -->
 
 
 

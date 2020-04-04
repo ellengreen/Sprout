@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { PlantFormComponent } from './my-plants/plant-form/plant-form.component'
     BrowserModule,
     ModalModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBKi-ZfdztsvTQAWMjq8WUF2lwPhzvVcM0'

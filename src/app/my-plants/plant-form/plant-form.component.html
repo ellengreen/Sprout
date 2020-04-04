@@ -1,1 +1,47 @@
-<p>plant-form works!</p>
+<form [formGroup]="angForm" novalidate>
+    <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control" formControlName="name" type="text">
+    </div>
+    <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['name'].errors.required">
+          Name is required.
+        </div>
+    </div>
+
+     <div class="form-group">
+        <label>location:</label>
+        <input class="form-control" formControlName="location" type="text">
+    </div>
+    <div *ngIf="angForm.controls['location'].invalid && (angForm.controls['location'].dirty || angForm.controls['location'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['location'].errors.required">
+          location is required.
+        </div>
+    </div>
+
+             <div class="form-group">
+        <label>water:</label>
+        <input class="form-control" formControlName="water" type="text">
+    </div>
+    <div *ngIf="angForm.controls['water'].invalid && (angForm.controls['water'].dirty || angForm.controls['water'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['water'].errors.required">
+          water is required.
+        </div>
+    </div>
+
+             <div class="form-group">
+        <label>light:</label>
+        <input class="form-control" formControlName="light" type="text">
+    </div>
+    <div *ngIf="angForm.controls['light'].invalid && (angForm.controls['light'].dirty || angForm.controls['light'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['light'].errors.required">
+          light is required.
+        </div>
+    </div>
+
+    <button type="submit"
+        (click)="addPlant()"
+        [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+        Save
+    </button>
+</form>
