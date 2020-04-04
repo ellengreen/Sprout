@@ -10,13 +10,15 @@ import { HomeComponent } from './home/home.component';
 import { PlantListComponent } from './my-plants/plant-list/plant-list.component';
 import { MapViewComponent } from './explore-shops/map-view/map-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PlantFormComponent } from './my-plants/plant-form/plant-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PlantListComponent,
-    MapViewComponent
+    MapViewComponent,
+    PlantFormComponent
   ],
   imports: [
     BrowserModule,
