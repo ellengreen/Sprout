@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md-6">
       <div *ngFor="let room of rooms">
-        <h4>{{room}}</h4>
+        <h2>{{room}}</h2>
         <ng-container *ngFor="let plant of plantList">
           <a *ngIf="plant.location === room"
           [class.selected]="plant === selectedPlant"
@@ -23,7 +23,7 @@
   <!-- DETAILS FOR SELECTED PLANT-->
   <div *ngIf="selectedPlant" class="col-md-6">
       <h2>{{selectedPlant.name | uppercase }} Profile</h2>
-        <div>
+        <div class="details">
           Placed in {{selectedPlant.location}}
           <br>
           Light Level: {{selectedPlant.light}}
