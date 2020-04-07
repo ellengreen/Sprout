@@ -18,7 +18,7 @@ export class PlantListComponent implements OnInit {
   modalRef: BsModalRef;
 
   rooms = [
-    "Kitchen", "Living Room", "Bedroom", "Bathroom", "Office"
+    "Kitchen", "Living Room", "Bedroom", "Office"
   ];
 
   constructor(private modalService: BsModalService) {}

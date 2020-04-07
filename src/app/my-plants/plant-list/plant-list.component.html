@@ -1,13 +1,10 @@
-<div class="jumbotron">
-    <h1>My Plants</h1>
-</div>
 
 <!-- PLANT LIST, ORGANIZED BY LOCATION/ROOM -->
 <div class="container"> 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div *ngFor="let room of rooms">
-        <h2>{{room}}</h2>
+        <h3>{{room}}</h3>
         <ng-container *ngFor="let plant of plantList">
           <a *ngIf="plant.location === room"
           [class.selected]="plant === selectedPlant"
@@ -20,8 +17,18 @@
       </div>
   </div>
 
+  <div class="col-md-3">
+
+    <button type="button" class="btn btn-dark btn-circle btn-xl"
+    (click)="openModal(template)"> +
+    </button>
+    <!-- <button class="btn btn-primary"
+    (click)="openModal(template)">Add A New Plant!
+  </button> -->
+
+  </div>
   <!-- DETAILS FOR SELECTED PLANT-->
-  <div *ngIf="selectedPlant" class="col-md-6">
+  <div *ngIf="selectedPlant" class="col-md-4">
       <h2>{{selectedPlant.name | uppercase }} Profile</h2>
         <div class="details">
           Placed in {{selectedPlant.location}}
@@ -36,9 +43,9 @@
   </div>
 
 <!-- MODAL -->
-  <button class="btn btn-primary"
+  <!-- <button class="btn btn-primary"
     (click)="openModal(template)">Add A New Plant!
-  </button>
+  </button> -->
   
   <ng-template #template>
     <div class="modal-header">

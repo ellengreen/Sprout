@@ -1,4 +1,4 @@
-h2 {
+h3, h2 {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -8,3 +8,34 @@ li, .details {
     font-size: 20px;
     font-style: normal;
 }
+
+.container {
+    padding: 40px;
+}
+
+li {
+    padding: 10px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    list-style-type: none;
+}
+
+button {
+    width:100px; 
+    margin: -20px -50px; 
+    position:relative;
+    top:50%; 
+    left:50%; 
+}
+
+.btn-circle.btn-xl { 
+    width: 70px; 
+    height: 70px; 
+    border-radius: 35px; 
+    font-size: 50px; 
+    display: block;
+    padding-top: 0px;
+    text-align: center;
+    line-height: 1em;
+} 
