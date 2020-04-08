@@ -4,7 +4,6 @@ import { PLANTS } from '../plants';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { FormGroup } from '@angular/forms';
 
-
 @Component({
   selector: 'app-plant-list',
   templateUrl: './plant-list.component.html',
