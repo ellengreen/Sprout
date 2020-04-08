@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {PlantFormComponent } from 'src/app/my-plants/plant-form/plant-form.component';
 import { PlantListComponent } from './plant-list.component';
 
 describe('PlantListComponent', () => {
@@ -8,7 +8,7 @@ describe('PlantListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlantListComponent ]
+      declarations: [ PlantListComponent, PlantFormComponent]
     })
     .compileComponents();
   }));

@@ -1,5 +1,39 @@
 agm-map {
+    height: 400px;
+}
+
+
+// .container {
+//     background-color: grey;
+// }
+
+.col-sm-7 {
+    margin-top: 50px;
+}
+
+.col-sm-5 {
+    background-color: pink;
+}
+
+.shop {
+    text-align: center;
+    margin-top: 70px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.row {
     height: 500px;
 }
 
 
+.details {
+    font-family: adobe-garamond-pro, serif;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+    
+}
+
+.multiline {
+    white-space: pre-wrap;
+}

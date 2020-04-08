@@ -1,3 +1,4 @@
+
 h3, h2 {
     font-family: 'Montserrat', sans-serif;
 }
@@ -7,6 +8,7 @@ li, .details {
     font-weight: 400;
     font-size: 20px;
     font-style: normal;
+    
 }
 
 .container {
@@ -21,6 +23,8 @@ li {
     list-style-type: none;
 }
 
+
+// BUTTON TO ADD NEW PLANT/OPEN MODAL
 button {
     width:100px; 
     margin: -20px -50px; 
@@ -39,3 +43,14 @@ button {
     text-align: center;
     line-height: 1em;
 } 
+
+
+// .col-md-4 {
+//     padding-top: 100px;
+// }
+
+.details {
+    background-color: pink;
+    padding: 100px 20px 100px 20px;
+
+}

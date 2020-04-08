@@ -28,8 +28,9 @@
 
   </div>
   <!-- DETAILS FOR SELECTED PLANT-->
-  <div *ngIf="selectedPlant" class="col-md-4">
-      <h2>{{selectedPlant.name | uppercase }} Profile</h2>
+  <div *ngIf="selectedPlant" class="col-md-4 details">
+      <h2>{{selectedPlant.name | uppercase }}</h2>
+      <h3>Profile</h3>
         <div class="details">
           Placed in {{selectedPlant.location}}
           <br>
@@ -43,10 +44,6 @@
   </div>
 
 <!-- MODAL -->
-  <!-- <button class="btn btn-primary"
-    (click)="openModal(template)">Add A New Plant!
-  </button> -->
-  
   <ng-template #template>
     <div class="modal-header">
       <h4 class="modal-title pull-left">New Plant</h4>

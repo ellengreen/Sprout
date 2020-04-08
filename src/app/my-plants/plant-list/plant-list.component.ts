@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef} from '@angular/core';
+import { Component, OnInit, TemplateRef} from '@angular/core';
 import { Plant } from '../plant';
 import { PLANTS } from '../plants';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
