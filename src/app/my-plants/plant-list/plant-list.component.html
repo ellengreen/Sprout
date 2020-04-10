@@ -1,4 +1,4 @@
-<!-- <div class="image" style="background-image: url('https://source.unsplash.com/bBiuSdck8tU/3648x5472')"> -->
+<div class="image" style="background-image: url('https://source.unsplash.com/bBiuSdck8tU/3648x5472')">
 <!-- PLANT LIST, ORGANIZED BY LOCATION/ROOM -->
 <div class="container" > 
   <div class="row">
@@ -17,28 +17,37 @@
       </div>
   </div>
 
+  <!-- BUTTON TO OPEN MODAL -->
   <div class="col-md-3">
-
     <button type="button" class="btn btn-dark btn-circle btn-xl"
     (click)="openModal(template)"> +
     </button>
-    <!-- <button class="btn btn-primary"
-    (click)="openModal(template)">Add A New Plant!
-  </button> -->
-
   </div>
+
   <!-- DETAILS FOR SELECTED PLANT-->
   <div *ngIf="selectedPlant" class="col-md-4">
-      <h2>{{selectedPlant.name | uppercase }}</h2>
-      <h3>Profile</h3>
+    <div class="head">
+      <h1>{{selectedPlant.name | uppercase }}</h1>
+      <h2>Profile</h2>
+    </div>
         <div class="details">
-          Placed in {{selectedPlant.location}}
+            <div>
+              <img *ngIf="selectedPlant.location === 'Living Room'" class="icon" src="assets/images/living-room.png">
+              <img *ngIf="selectedPlant.location === 'Kitchen'" class="icon" src="assets/images/kitchen.png">
+              <img *ngIf="selectedPlant.location === 'Bedroom'" class="icon" src="assets/images/bed.png">
+              <img *ngIf="selectedPlant.location === 'Office'" class="icon" src="assets/images/office.png">
+            </div>
+          <p>Located in the {{selectedPlant.location}}</p>
           <br>
-          Light Level: {{selectedPlant.light}}
+          <img class="icon2" src="assets/images/sun.png">
+          <p>Needs {{selectedPlant.light}} light</p>
+          <p>Rotate every time it's watered</p>
           <br>
-          Watering Schedule: {{selectedPlant.water}}
+          <img class="icon2" src="assets/images/drop.png">
+          <p>Should be watered {{selectedPlant.water}}</p>
+          <p>Always do a soil check before watering</p>
           <br>
-          Acquired in {{selectedPlant.date}}
+          <p>Acquired in {{selectedPlant.date}}</p>
         </div>
     </div>
   </div>
@@ -46,22 +55,17 @@
 <!-- MODAL -->
   <ng-template #template>
     <div class="modal-header">
-      <h4 class="modal-title pull-left">New Plant</h4>
+      <h4 class="modal-title">New Plant</h4>
         <button type="button" 
           class="close pull-right" 
           (click)="modalRef.hide()">
-          <span aria-hidden="true">&times;</span>
         </button>
     </div> 
 
-    <!-- DISPLAY FORM FROM PLANT-FORM COMPONENT -->
+    <!-- MODAL BODY (FORM FROM PLANT-FORM COMPONENT) -->
     <div class="modal-body">
       <app-plant-form></app-plant-form>
     </div>
   </ng-template>
 
 </div>
-<!-- </div>
-
-
- -->

@@ -3,7 +3,7 @@ export class Plant {
     location: string;
     light: string;
     water: string;
-    date: string;
+    date: string;   
 
     constructor(name: string, location: string, light: string, water: string, date: string){
         this.name = name;

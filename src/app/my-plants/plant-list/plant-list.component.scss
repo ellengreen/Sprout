@@ -1,6 +1,11 @@
-h4, h3, h2 {
+h4, h3, h2, h1 {
     font-family: 'Montserrat', sans-serif;
-    
+}
+
+.head {
+    text-align: center;
+    padding-top: 30px; 
+    padding-bottom: 30px;
 }
 
 li, .details {
@@ -59,3 +64,26 @@ button {
     background-size: cover;
   }
 
+
+
+.icon {
+    max-width: 30%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.icon2 {
+    max-width: 25%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 10px;
+}
+
+p {
+    text-align: center;
+}

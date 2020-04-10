@@ -1,6 +1,7 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
+<div class="image">
+    <div class="container-fluid">
+    <!-- <div class="row"> -->
+        <div class="col-sm-4">
             <agm-map
                 [latitude]="lat"
                 [longitude]="lng"
@@ -18,7 +19,7 @@
             </agm-map>
         </div>
 
-        <div class="col-sm-6 details"  *ngIf="selectedMarker">
+        <div class="col-sm-4 details"  *ngIf="selectedMarker">
             <h2>{{selectedMarker.label}}</h2>
             <div class="card-group">
                 <div class="card">
@@ -63,7 +64,7 @@
                 </div>
             </div>
 
-    </div>
+    <!-- </div> -->
 </div>
 
 

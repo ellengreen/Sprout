@@ -20,6 +20,7 @@ export class PlantListComponent implements OnInit {
     "Kitchen", "Living Room", "Bedroom", "Office"
   ];
 
+
   constructor(private modalService: BsModalService) {}
 
   openModal(template: TemplateRef<any>) {
