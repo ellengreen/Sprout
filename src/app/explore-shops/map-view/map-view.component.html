@@ -1,7 +1,3 @@
-<div class="jumbotron">
-    <h1>Shop Local</h1>
-</div>
-
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
@@ -23,31 +19,37 @@
         </div>
 
         <div class="col-sm-6 details"  *ngIf="selectedMarker">
-            
+            <h2>{{selectedMarker.label}}</h2>
             <div class="card-group">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title multiline">Address</h4>
-                        <p class="card-text">
-                            {{selectedMarker?.address.join(', \n')}}
-                        </p>
+                        <h4 class="card-title">Address</h4>
+                        <ul class="card-text address">
+                            <li *ngFor="let i of selectedMarker.address | slice:0:3">
+                                {{i}}
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title ">Hours</h4>
+                            <ul class="card-text">
+                                <li *ngFor="let hour of selectedMarker.hours | slice:0:7">
+                                    {{hour}}
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-group">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Phone</h4>
                         <p class="card-text">
                             {{selectedMarker.phone}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-group">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title multiline">Address</h4>
-                        <p class="card-text">
-                            {{selectedMarker?.address.join(', \n')}}
                         </p>
                     </div>
                 </div>

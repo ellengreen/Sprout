@@ -1,6 +1,6 @@
-
+<!-- <div class="image" style="background-image: url('https://source.unsplash.com/bBiuSdck8tU/3648x5472')"> -->
 <!-- PLANT LIST, ORGANIZED BY LOCATION/ROOM -->
-<div class="container"> 
+<div class="container" > 
   <div class="row">
     <div class="col-md-5">
       <div *ngFor="let room of rooms">
@@ -28,7 +28,7 @@
 
   </div>
   <!-- DETAILS FOR SELECTED PLANT-->
-  <div *ngIf="selectedPlant" class="col-md-4 details">
+  <div *ngIf="selectedPlant" class="col-md-4">
       <h2>{{selectedPlant.name | uppercase }}</h2>
       <h3>Profile</h3>
         <div class="details">
@@ -61,6 +61,7 @@
   </ng-template>
 
 </div>
+<!-- </div>
 
 
-
+ -->

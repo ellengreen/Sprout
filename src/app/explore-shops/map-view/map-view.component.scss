@@ -1,30 +1,22 @@
 agm-map {
-    height: 400px;
+    height: 500px;
 }
 
-
-// .container {
-//     background-color: grey;
-// }
-
-.col-sm-7 {
-    margin-top: 50px;
+.container {
+    margin-top: 100px;
+    
 }
 
-.col-sm-5 {
-    background-color: pink;
-}
-
-.shop {
+h2 {
     text-align: center;
     margin-top: 70px;
     font-family: 'Montserrat', sans-serif;
 }
 
-.row {
-    height: 500px;
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
-
 
 .details {
     font-family: adobe-garamond-pro, serif;
@@ -34,6 +26,6 @@ agm-map {
     
 }
 
-.multiline {
-    white-space: pre-wrap;
+.address {
+    list-style-type: none;
 }

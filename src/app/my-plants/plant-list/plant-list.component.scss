@@ -1,14 +1,19 @@
-
-h3, h2 {
+h4, h3, h2 {
     font-family: 'Montserrat', sans-serif;
+    
 }
 
 li, .details {
     font-family: adobe-garamond-pro, serif;
     font-weight: 400;
     font-size: 20px;
-    font-style: normal;
-    
+    font-style: normal;   
+}
+
+.col-md-5, .col-md-4 {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
 }
 
 .container {
@@ -19,12 +24,11 @@ li {
     padding: 10px;
     border-style: none;
     border-radius: 10px;
-    background-color: #f8f9fa;
+    background-color: white;
     list-style-type: none;
 }
 
 
-// BUTTON TO ADD NEW PLANT/OPEN MODAL
 button {
     width:100px; 
     margin: -20px -50px; 
@@ -45,12 +49,13 @@ button {
 } 
 
 
-// .col-md-4 {
-//     padding-top: 100px;
-// }
+.image {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
-.details {
-    background-color: pink;
-    padding: 100px 20px 100px 20px;
-
-}
