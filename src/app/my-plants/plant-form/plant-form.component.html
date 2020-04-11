@@ -8,7 +8,7 @@
             <td *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="error">
                 <div *ngIf="angForm.controls['name'].errors.required">
                     What kind of plant is this? 
-                  </div>
+                </div>
             </td>
         </tr>
 
@@ -67,6 +67,8 @@
 
     </table>
 
+    <!-- Submit -->
+    <!-- Won't be able to click if form hasn't been touched/is invalid -->
     <button type="submit"
     (click)="addPlant()"
     [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">

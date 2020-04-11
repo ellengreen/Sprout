@@ -68,4 +68,22 @@
     </div>
 </div>
 
-<app-weather></app-weather>
+<button type="button" class="btn btn-dark btn-circle btn-xl"
+(click)="openModal(template)"> Check It Out
+</button>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title">Today's Weather in St. Louis</h4>
+        <button type="button"
+            class="close pull-right" 
+            (click)="modalRef.hide()">
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-weather></app-weather>
+    </div>
+</ng-template>
+
+
+

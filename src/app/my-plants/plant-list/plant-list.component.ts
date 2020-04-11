@@ -9,17 +9,18 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './plant-list.component.html',
   styleUrls: ['./plant-list.component.scss']
 })
+
 export class PlantListComponent implements OnInit {
+
   plantList = PLANTS;
-
   selectedPlant: Plant;
-
   modalRef: BsModalRef;
-
   rooms = [
-    "Kitchen", "Living Room", "Bedroom", "Office"
+    "Kitchen", 
+    "Living Room", 
+    "Bedroom", 
+    "Office"
   ];
-
 
   constructor(private modalService: BsModalService) {}
 
@@ -30,13 +31,13 @@ export class PlantListComponent implements OnInit {
   ngOnInit() {
   }
 
-
   onSelect(plant: Plant) : void {
     this.selectedPlant = plant;
   }
 
   angForm: FormGroup;
   
+  // Add form values to plantList
   addPlant() {
     this.plantList.push(this.angForm.value);
   }

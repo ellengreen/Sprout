@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Marker } from '../marker';
 import { styles } from '../mapStyle';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+
 
 @Component({
   selector: 'app-map-view',
@@ -14,16 +16,20 @@ export class MapViewComponent implements OnInit {
   lng = -90.196091;
   zoom = 11;
 
+  modalRef: BsModalRef;
   styles = styles;
   markers = Marker; 
-  selectedMarker; 
+  selectedMarker: any;
 
   onSelect(marker) : void {
     this.selectedMarker = marker;
   }
 
-  constructor() { }
+  constructor(private modalService: BsModalService) {}
 
+  openModal(template: TemplateRef<any>) {
+      this.modalRef = this.modalService.show(template);
+  }
   ngOnInit() {
   }
 
