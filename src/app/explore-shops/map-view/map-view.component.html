@@ -1,89 +1,99 @@
 <div class="image">
+    <div class="row1"></div>
     <div class="container-fluid">
-    <div class="row justify-content-sm-between">
-        <div class="col-sm-4">
-            <agm-map
-                [latitude]="lat"
-                [longitude]="lng"
-                [zoom]="zoom"
-                [styles]="styles"
-                >
+        <div class="row justify-content-sm-between">
+            <!-- GOOGLE MAP -->
+            <div class="col-sm-4 map">
+                <agm-map
+                    [latitude]="lat"
+                    [longitude]="lng"
+                    [zoom]="zoom"
+                    [styles]="styles">
+                    <agm-marker
+                        (markerClick)="onSelect(marker)"
+                        *ngFor="let marker of markers; index as markerId"
+                        [latitude]="marker.lat"
+                        [longitude]="marker.lng">
+                    </agm-marker>
+                </agm-map>
+            </div>
 
-                <agm-marker
-                    (markerClick)="onSelect(marker)"
-                    *ngFor="let marker of markers; index as markerId"
-                    [latitude]="marker.lat"
-                    [longitude]="marker.lng">
-                </agm-marker>
-                
-            </agm-map>
+            <!-- RIGHT COLUMN-->
+            <div class="col-sm-3 details">
+                <h1>SHOP</h1>
+                <img  src="assets/images/shop.png">
+                <h1 class="head">LOCAL</h1>
+
+                <!-- If a marker has been clicked -->
+                    <div *ngIf="selectedMarker">
+                        <h2>{{selectedMarker.label}}</h2>
+                        <div class="card-group">
+                            <!-- Address Card -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Address</h4>
+                                        <ul class="card-text address">
+                                            <li *ngFor="let i of selectedMarker.address | slice:0:3">
+                                                {{i}}
+                                            </li>
+                                        </ul>
+                                </div>
+                            </div>
+                            <!-- Shop Hours Card -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title ">Hours</h4>
+                                        <ul class="card-text">
+                                            <li *ngFor="let hour of selectedMarker.hours | slice:0:7">
+                                                {{hour}}
+                                            </li>
+                                        </ul>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="card-group">
+                        <!-- Phone Number Card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Phone</h4>
+                                    <p class="card-text">
+                                        {{selectedMarker.phone}}
+                                    </p>
+                            </div>
+                        </div>
+                        <!-- Website Card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Website</h4>
+                                    <a href={{selectedMarker.website}} class="card-text">
+                                        {{selectedMarker.website}}
+                                    </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <div>
+                        <button type="button" class="btn btn-light"
+                        (click)="openModal(template)"> Check the weather before going out?
+                        </button>
+
+                        <ng-template #template>
+                            <div class="modal-header">
+                                <h4 class="modal-title">Today's Weather in St. Louis</h4>
+                                <button type="button"
+                                    class="close pull-right" 
+                                    (click)="modalRef.hide()">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <app-weather></app-weather>
+                            </div>
+                        </ng-template>
+                    </div>
+                    </div>               
+            </div>          
         </div>
-
-        <div class="col-sm-4 details"  *ngIf="selectedMarker">
-            <h2>{{selectedMarker.label}}</h2>
-            <div class="card-group">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Address</h4>
-                        <ul class="card-text address">
-                            <li *ngFor="let i of selectedMarker.address | slice:0:3">
-                                {{i}}
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title ">Hours</h4>
-                            <ul class="card-text">
-                                <li *ngFor="let hour of selectedMarker.hours | slice:0:7">
-                                    {{hour}}
-                                </li>
-                            </ul>
-                    </div>
-                </div>
-
-            </div>
-            <div class="card-group">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Phone</h4>
-                        <p class="card-text">
-                            {{selectedMarker.phone}}
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Website</h4>
-                        <a href={{selectedMarker.website}} class="card-text">
-                            {{selectedMarker.website}}
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-
-    </div>
-</div>
-
-<button type="button" class="btn btn-dark btn-circle btn-xl"
-(click)="openModal(template)"> Check It Out
-</button>
-
-<ng-template #template>
-    <div class="modal-header">
-        <h4 class="modal-title">Today's Weather in St. Louis</h4>
-        <button type="button"
-            class="close pull-right" 
-            (click)="modalRef.hide()">
-        </button>
-    </div>
-    <div class="modal-body">
-        <app-weather></app-weather>
-    </div>
-</ng-template>
 
 
 
