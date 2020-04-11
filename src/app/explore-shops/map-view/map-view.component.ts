@@ -12,8 +12,9 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class MapViewComponent implements OnInit {
 
   //initial center position for map
-  lat = 38.627810;
-  lng = -90.196091;
+
+  lat = 38.610185;
+  lng = -90.256227;
   zoom = 11;
 
   modalRef: BsModalRef;

@@ -1,12 +1,14 @@
 <div class="card">
     <div class="card-body">
-        <img src="{{ this.weather?.current.weather_icons }}">
-        <p>{{this.weather?.current.temperature }}</p>
-        <p>{{this.weather?.current.feelslike}}</p>
+        <h1>{{ this.weather?.location.name | uppercase }}</h1>
+        <h2>{{ this.weather?.location.localtime | date: "fullDate" }}</h2>
+        <h1 class="temp">{{this.weather?.current.temperature }}<span class="temp">&#176;</span> F</h1>
+    <hr>
         <p>{{this.weather?.current.weather_descriptions}}</p>
-        <p>{{this.weather?.current.precip }}</p>
-        <p>{{this.weather?.current.humidity}}</p>
+        <p>Feels like {{this.weather?.current.feelslike}}<span>&#176;</span></p>
+        <p>{{this.weather?.current.precip }}% Precipitation</p>
     </div>
 </div>
+
 
 
