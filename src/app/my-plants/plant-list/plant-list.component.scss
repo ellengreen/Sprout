@@ -22,7 +22,7 @@ li, .details {
 }
 
 .container {
-    padding: 40px;
+    padding-top: 40px;
 }
 
 li {
@@ -36,10 +36,9 @@ li {
 
 button {
     width:100px; 
-    margin: -20px -50px; 
-    position:relative;
-    top:50%; 
-    left:50%; 
+    position: absolute;
+    top:20%; 
+    left:48%; 
 }
 
 .btn-circle.btn-xl { 
@@ -57,17 +56,15 @@ button {
 .image {
     height: 100vh;
     min-height: 350px;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-size:cover;
+    width:auto;
+    background-image:url('src/assets/images/centerPlant.jpg');
+    background-position:50% 50%;
   }
 
 
-
 .icon {
-    max-width: 30%;
+    max-width: 20%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -76,7 +73,7 @@ button {
 }
 
 .icon2 {
-    max-width: 25%;
+    max-width: 15%;
     height: auto;
     margin-left: auto;
     margin-right: auto;

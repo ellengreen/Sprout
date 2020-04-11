@@ -1,28 +1,29 @@
-<div class="image" style="background-image: url('https://source.unsplash.com/bBiuSdck8tU/3648x5472')">
-<!-- PLANT LIST, ORGANIZED BY LOCATION/ROOM -->
-<div class="container" > 
-  <div class="row">
-    <div class="col-md-5">
-      <div *ngFor="let room of rooms">
-        <h3>{{room}}</h3>
-        <ng-container *ngFor="let plant of plantList">
-          <a *ngIf="plant.location === room"
-          [class.selected]="plant === selectedPlant"
-          (click)="onSelect(plant)">
-            <ul>
-              <li>{{plant.name}}</li>
-            </ul>
-          </a>
-        </ng-container>
-      </div>
-  </div>
+<div class="image">
 
   <!-- BUTTON TO OPEN MODAL -->
-  <div class="col-md-3">
-    <button type="button" class="btn btn-dark btn-circle btn-xl"
-    (click)="openModal(template)"> +
-    </button>
-  </div>
+  <button type="button" class="btn btn-dark btn-circle btn-xl"
+  (click)="openModal(template)"> +
+  </button>
+  
+  <!-- PLANT LIST, ORGANIZED BY LOCATION/ROOM -->
+  <div class="container" > 
+    <div class="row justify-content-md-between">
+      <div class="col-md-4">
+        <!-- Display every room in rooms array -->
+        <div *ngFor="let room of rooms">
+          <h3>{{room}}</h3>
+          <!-- Display every plant from plantList in their respective room -->
+          <div *ngFor="let plant of plantList">
+            <a *ngIf="plant.location === room"
+            [class.selected]="plant === selectedPlant"
+            (click)="onSelect(plant)">
+              <ul>
+                <li>{{plant.name}}</li>
+              </ul>
+            </a>
+          </div>
+        </div>
+    </div>
 
   <!-- DETAILS FOR SELECTED PLANT-->
   <div *ngIf="selectedPlant" class="col-md-4">
@@ -30,26 +31,29 @@
       <h1>{{selectedPlant.name | uppercase }}</h1>
       <h2>Profile</h2>
     </div>
-        <div class="details">
-            <div>
-              <img *ngIf="selectedPlant.location === 'Living Room'" class="icon" src="assets/images/living-room.png">
-              <img *ngIf="selectedPlant.location === 'Kitchen'" class="icon" src="assets/images/kitchen.png">
-              <img *ngIf="selectedPlant.location === 'Bedroom'" class="icon" src="assets/images/bed.png">
-              <img *ngIf="selectedPlant.location === 'Office'" class="icon" src="assets/images/office.png">
-            </div>
-          <p>Located in the {{selectedPlant.location}}</p>
-          <br>
-          <img class="icon2" src="assets/images/sun.png">
+    <div class="details">
+      <div>
+        <img *ngIf="selectedPlant.location === 'Living Room'" class="icon" src="assets/images/living-room.png">
+        <img *ngIf="selectedPlant.location === 'Kitchen'" class="icon" src="assets/images/kitchen.png">
+        <img *ngIf="selectedPlant.location === 'Bedroom'" class="icon" src="assets/images/bed.png">
+        <img *ngIf="selectedPlant.location === 'Office'" class="icon" src="assets/images/office.png">
+        <p>Located in the {{selectedPlant.location}}</p>
+      </div>
+      <br>
+      <div>
+        <img class="icon2" src="assets/images/sun.png">
           <p>Needs {{selectedPlant.light}} light</p>
           <p>Rotate every time it's watered</p>
-          <br>
-          <img class="icon2" src="assets/images/drop.png">
+        <br>
+        <img class="icon2" src="assets/images/drop.png">
           <p>Should be watered {{selectedPlant.water}}</p>
           <p>Always do a soil check before watering</p>
-          <br>
+        <br>
           <p>Acquired in {{selectedPlant.date}}</p>
-        </div>
+      </div>
+
     </div>
+  </div>
   </div>
 
 <!-- MODAL -->
