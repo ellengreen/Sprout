@@ -1,9 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { get } from 'http';
 import { WeatherService } from './weather.service';
 
-let service = WeatherService;
 
 describe('WeatherService', () => {
   beforeEach(() => TestBed.configureTestingModule({
@@ -18,5 +16,6 @@ describe('WeatherService', () => {
   it("check Service is running", () => {
     expect(WeatherService);
   });
+
 
 });

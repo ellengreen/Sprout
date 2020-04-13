@@ -23,4 +23,13 @@ describe('WeatherComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display the degree symbol', async(() => {
+    const fixture = TestBed.createComponent(WeatherComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('span').textContent).toContain('°');
+  }));
+
+  
 });

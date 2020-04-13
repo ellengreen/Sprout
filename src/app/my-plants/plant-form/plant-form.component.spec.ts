@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { Plant } from '../plant';
 import { PlantFormComponent } from './plant-form.component';
 
 describe('PlantFormComponent', () => {
@@ -48,6 +48,11 @@ describe('PlantFormComponent', () => {
     component.plantForm.controls.water.setValue('Weekly');
     component.plantForm.controls.date.setValue('June 2019');
     expect(component.plantForm.valid).toBeTruthy();
+  });
+
+  it("should add item to array", () => {
+    component.addPlant();
+    expect(component.plantList.length).toBeGreaterThanOrEqual(11);
   });
 
 });

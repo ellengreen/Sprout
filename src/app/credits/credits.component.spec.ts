@@ -22,4 +22,11 @@ describe('CreditsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render Image Credits in a h5 tag', async(() => {
+    const fixture = TestBed.createComponent(CreditsComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h5').textContent).toContain('Image Credits');
+  }));
 });
