@@ -21,7 +21,7 @@ export class MapViewComponent implements OnInit {
   markers = Marker; 
   selectedMarker: any;
 
-  onSelect(marker) : void {
+  onSelect(marker: any) : void {
     this.selectedMarker = marker;
   }
 

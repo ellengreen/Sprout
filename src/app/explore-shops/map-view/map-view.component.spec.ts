@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MapViewComponent } from './map-view.component';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 describe('MapViewComponent', () => {
   let component: MapViewComponent;
@@ -8,6 +10,7 @@ describe('MapViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ModalModule.forRoot()],
       declarations: [ MapViewComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     })
@@ -23,6 +26,9 @@ describe('MapViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+
 });
 
 

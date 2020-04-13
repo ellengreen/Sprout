@@ -14,6 +14,7 @@ export class PlantListComponent implements OnInit {
 
   plantList = PLANTS;
   selectedPlant: Plant;
+  isPlant = false;
   modalRef: BsModalRef;
   rooms = [
     "Kitchen", 
@@ -33,6 +34,7 @@ export class PlantListComponent implements OnInit {
 
   onSelect(plant: Plant) : void {
     this.selectedPlant = plant;
+    this.isPlant = true;
   }
 
   plantForm: FormGroup;
