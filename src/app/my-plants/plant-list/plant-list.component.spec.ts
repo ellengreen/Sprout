@@ -3,6 +3,7 @@ import {PlantFormComponent } from 'src/app/my-plants/plant-form/plant-form.compo
 import { PlantListComponent } from './plant-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { Plant } from '../plant';
 
 
 describe('PlantListComponent', () => {
@@ -26,7 +27,12 @@ describe('PlantListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('onSelect() should select plant', () => {
+    const plant: Plant = { name: 'Plant', location: 'Bedroom', light: 'Low', water: 'Weekly', date: 'Today' };
+    component.onSelect(plant);
+    expect(component.selectedPlant).toBe(plant);
+  })
+
 });
 
-
-//test that value is added to plantList

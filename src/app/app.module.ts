@@ -13,6 +13,7 @@ import { MapViewComponent } from './explore-shops/map-view/map-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlantFormComponent } from './my-plants/plant-form/plant-form.component';
 import { WeatherComponent } from './explore-shops/weather/weather.component';
+import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WeatherComponent } from './explore-shops/weather/weather.component';
     PlantListComponent,
     MapViewComponent,
     PlantFormComponent,
-    WeatherComponent
+    WeatherComponent,
+    CreditsComponent
   ],
   imports: [
     BrowserModule,
