@@ -57,6 +57,7 @@ h4, h3, h2, h1 {
     background-position:50% 50%;
 }
 
+
 li {
     padding: 10px;
     border-style: none;
@@ -75,3 +76,18 @@ li, .details {
 p {
     text-align: center;
 }
+
+
+@media only screen and (max-width: 750px) {
+    .image {
+      background-image: none;
+    }
+    button {
+        position: fixed;
+        top: 125px;
+        left: 575px;
+      }
+    li {
+        width: 400px;
+    }
+  }

@@ -26,9 +26,10 @@ describe('PlantFormComponent', () => {
   });
 
   it('form should be invalid upon start', () => {
-    expect(component.angForm.valid).toBeFalsy();
+    expect(component.plantForm.valid).toBeFalsy();
   });
 
 });
 
 
+//Test that form resets after submit

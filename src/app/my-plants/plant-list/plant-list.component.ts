@@ -35,10 +35,10 @@ export class PlantListComponent implements OnInit {
     this.selectedPlant = plant;
   }
 
-  angForm: FormGroup;
+  plantForm: FormGroup;
   
   // Add form values to plantList
   addPlant() {
-    this.plantList.push(this.angForm.value);
+    this.plantList.push(this.plantForm.value);
   }
 }

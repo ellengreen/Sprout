@@ -1,12 +1,12 @@
-<form [formGroup]="angForm" (ngSubmit)="addPlant()">
+<form [formGroup]="plantForm" (ngSubmit)="addPlant()">
     <table>
         <tr>
 			<td>Name:</td>
 			<td>
 				<input class="form-control" formControlName="name" type="text">
             </td>
-            <td *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="error">
-                <div *ngIf="angForm.controls['name'].errors.required">
+            <td *ngIf="plantForm.controls['name'].invalid && (plantForm.controls['name'].dirty || plantForm.controls['name'].touched)" class="error">
+                <div *ngIf="plantForm.controls['name'].errors.required">
                     What kind of plant is this? 
                 </div>
             </td>
@@ -22,8 +22,8 @@
                     </option>
                 </select>
             </td>
-            <td *ngIf="angForm.controls['location'].invalid && (angForm.controls['location'].dirty || angForm.controls['location'].touched)" class="error">
-                <div *ngIf="angForm.controls['location'].errors.required">
+            <td *ngIf="plantForm.controls['location'].invalid && (plantForm.controls['location'].dirty || plantForm.controls['location'].touched)" class="error">
+                <div *ngIf="plantForm.controls['location'].errors.required">
                   Where are you keeping this plant? 
                 </div>
             </td>
@@ -34,8 +34,8 @@
 			<td>
 				<input class="form-control" formControlName="light" type="text">
             </td>
-            <td *ngIf="angForm.controls['light'].invalid && (angForm.controls['light'].dirty || angForm.controls['light'].touched)" class="error">
-                <div *ngIf="angForm.controls['light'].errors.required">
+            <td *ngIf="plantForm.controls['light'].invalid && (plantForm.controls['light'].dirty || plantForm.controls['light'].touched)" class="error">
+                <div *ngIf="plantForm.controls['light'].errors.required">
                     What level of light does this plant need? 
                 </div>
             </td>
@@ -46,8 +46,8 @@
 			<td>
 				<input class="form-control" formControlName="water" type="text">
             </td>
-            <td *ngIf="angForm.controls['water'].invalid && (angForm.controls['water'].dirty || angForm.controls['water'].touched)" class="error">
-                <div *ngIf="angForm.controls['water'].errors.required">
+            <td *ngIf="plantForm.controls['water'].invalid && (plantForm.controls['water'].dirty || plantForm.controls['water'].touched)" class="error">
+                <div *ngIf="plantForm.controls['water'].errors.required">
                     How often do you need to water this plant? 
                   </div>
             </td>
@@ -58,8 +58,8 @@
 			<td>
 				<input class="form-control" formControlName="date" type="text">
             </td>
-            <td *ngIf="angForm.controls['date'].invalid && (angForm.controls['date'].dirty || angForm.controls['date'].touched)" class="error">
-                <div *ngIf="angForm.controls['date'].errors.required">
+            <td *ngIf="plantForm.controls['date'].invalid && (plantForm.controls['date'].dirty || plantForm.controls['date'].touched)" class="error">
+                <div *ngIf="plantForm.controls['date'].errors.required">
                     When did you get this plant? 
                 </div>
             </td>
@@ -71,7 +71,7 @@
     <!-- Won't be able to click if form hasn't been touched/is invalid -->
     <button type="submit"
     (click)="addPlant()"
-    [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+    [disabled]="plantForm.pristine || plantForm.invalid" class="btn btn-success">
     Submit
     </button>
 

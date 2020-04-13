@@ -27,3 +27,6 @@ describe('PlantListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+//test that value is added to plantList

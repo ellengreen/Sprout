@@ -17,13 +17,13 @@ export class PlantFormComponent {
     'Living Room', 
     'Office'
   ];
-  angForm: FormGroup;
+  plantForm: FormGroup;
 
   constructor (private formBuilder: FormBuilder) {
   }
 
   ngOnInit() : void {
-    this.angForm = this.formBuilder.group({
+    this.plantForm = this.formBuilder.group({
       name: ["", [Validators.required]],
       location: [null, [Validators.required]],
       light: ["", [Validators.required]],
@@ -35,8 +35,8 @@ export class PlantFormComponent {
   //Adds user input to Plant List (does not persist)
   //Calls resetForm to clear input fields
   addPlant() {
-    this.plantList.push(this.angForm.value);
-    this.resetForm(this.angForm)
+    this.plantList.push(this.plantForm.value);
+    this.resetForm(this.plantForm)
   }
 
   //Clears input fields after a submission

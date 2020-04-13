@@ -24,3 +24,6 @@ describe('MapViewComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+//test onSelect method
