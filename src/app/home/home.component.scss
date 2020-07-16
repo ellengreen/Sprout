@@ -1,27 +1,18 @@
-.center {
-  padding: 250px 40px;
+h1 {               
+  font-family: bambi;
+  color: white;
+  font-size: 150px;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.container-fluid {
-  height: 870px;
+body {
+  background-size: cover;
+  height: 100vh;
+  background-image: url('src/assets/images/wetleaves2.jpg');
 }
 
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  padding-left: 12px;
-}
-
-.image {
-    height: 100%;
-    min-height: 870px;
-    background: no-repeat center;
-    background-size: cover;
-    background-image: url('src/assets/images/plant2.jpg');
-  }
-
-p {
-  font-family: adobe-garamond, serif;
-  font-weight: 00;
-  font-size: 18px;
-  font-style: normal;
-}
