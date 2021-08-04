@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlantFormComponent } from './my-plants/plant-form/plant-form.component';
 import { WeatherComponent } from './explore-shops/weather/weather.component';
 import { NavComponent } from './nav/nav.component';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
