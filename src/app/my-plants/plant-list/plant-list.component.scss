@@ -1,93 +1,32 @@
-.btn-circle.btn-xl { 
-    width: 70px; 
-    height: 70px; 
-    border-radius: 35px; 
-    font-size: 50px; 
-    display: block;
-    padding-top: 0px;
-    text-align: center;
-    line-height: 1em;
-} 
-
-button {
-    width:100px; 
-    position: absolute;
-    top:20%; 
-    left:48%; 
-}
-
-.container-fluid {
-    padding: 40px;
-}
-
-h4, h3, h2, h1 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.head {
-    text-align: center;
-    padding-top: 30px; 
-    padding-bottom: 30px;
-}
-
-.icon {
-    max-width: 20%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding-bottom: 10px;
-}
-
-.icon2 {
-    max-width: 15%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding-bottom: 10px;
-}
-
-.image {
+.plant-list-container {
+    width: 100%;
     height: 100%;
-    min-height: 350px;
-    background-size:cover;
-    width:auto;
-    // background-image:url('src/assets/images/centerPlant.jpg');
-    background-position:50% 50%;
-}
+    background-image: url(../../../assets/images/corner-monstera.jpeg);
+    background-size: cover;
 
+    .no-rooms-prompt {
+        color: green;
+        padding: 13rem 15rem 0 4rem;
 
-li {
-    padding: 10px;
-    border-style: none;
-    border-radius: 10px;
-    background-color: white;
-    list-style-type: none;
-}
+        h1 {
+            font-size: 3.5rem;
+        }
 
-li, .details {
-    font-family: adobe-garamond-pro, serif;
-    font-weight: 400;
-    font-size: 20px;
-    font-style: normal;   
-}
+        h3 {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
 
-p {
-    text-align: center;
-}
-
-
-@media only screen and (max-width: 750px) {
-    .image {
-      background-image: none;
+        button {
+            background-color: white;
+        }
     }
-    button {
-        position: fixed;
-        top: 125px;
-        left: 575px;
-      }
-    li {
-        width: 400px;
+
+    .room-container {
+        padding: 3rem;
+        .room-card {
+            width: 22rem;
+        }
     }
-  }
+}

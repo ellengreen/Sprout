@@ -14,7 +14,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlantFormComponent } from './my-plants/plant-form/plant-form.component';
 import { WeatherComponent } from './explore-shops/weather/weather.component';
 import { NavComponent } from './nav/nav.component';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatDatepickerModule, MatDialogModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatNativeDateModule, MatSelectModule } from '@angular/material';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+import { PlantListContainerComponent } from './containers/plant-list-container/plant-list-container.component';
+import { AddRoomDialogComponent } from './components/add-room-dialog/add-room-dialog.component';
+import { AddPlantDialogComponent } from './components/add-plant-dialog/add-plant-dialog.component';
+import { EnumArrayPipe } from './shared/pipes/enum-array.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +33,11 @@ import { MatButtonModule } from '@angular/material';
     MapViewComponent,
     PlantFormComponent,
     WeatherComponent,
-    NavComponent
+    NavComponent,
+    PlantListContainerComponent,
+    AddRoomDialogComponent,
+    AddPlantDialogComponent,
+    EnumArrayPipe
   ],
   imports: [
     BrowserModule,
@@ -37,7 +50,21 @@ import { MatButtonModule } from '@angular/material';
     }),
     BrowserAnimationsModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    MatIconModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatGridListModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],

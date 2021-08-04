@@ -1,8 +1,9 @@
-import { Component, OnInit, TemplateRef} from '@angular/core';
-import { Plant } from '../plant';
-import { PLANTS } from '../plants';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { FormGroup } from '@angular/forms';
+import { Component, Input, OnChanges } from '@angular/core';
+import { PlantDatabaseService } from 'src/app/services/plant-database.service';
+import { Room } from 'src/app/interfaces/room.interface';
+import { MatDialog } from '@angular/material';
+import { AddRoomDialogComponent } from 'src/app/components/add-room-dialog/add-room-dialog.component';
+import { AddPlantDialogComponent } from 'src/app/components/add-plant-dialog/add-plant-dialog.component';
 
 @Component({
   selector: 'app-plant-list',
@@ -10,35 +11,31 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./plant-list.component.scss']
 })
 
-export class PlantListComponent implements OnInit {
+export class PlantListComponent implements OnChanges {
+  @Input() roomList: Room[];
 
-  plantList = PLANTS;
-  selectedPlant: Plant;
-  modalRef: BsModalRef;
-  rooms = [
-    "Kitchen", 
-    "Living Room", 
-    "Bedroom", 
-    "Office"
-  ];
+  userRooms: Room[];
 
-  constructor(private modalService: BsModalService) {}
-
-  openModal(template: TemplateRef<any>) {
-      this.modalRef = this.modalService.show(template);
+  constructor(public plantDatabaseService: PlantDatabaseService, public roomDialog: MatDialog, public plantDialog: MatDialog) {
   }
 
-  ngOnInit() {
+  ngOnChanges() {
+    console.log(this.roomList)
   }
 
-  onSelect(plant: Plant) : void {
-    this.selectedPlant = plant;
+  openDialog() {
+    const dialogRef = this.roomDialog.open(AddRoomDialogComponent);
   }
 
-  plantForm: FormGroup;
-  
-  // Add form values to plantList
-  addPlant() {
-    this.plantList.push(this.plantForm.value);
+  openPlantDialog(room: string) {
+    this.plantDialog.open(AddPlantDialogComponent, {
+      data: {
+        roomKey: room
+      }
+    });
+  }
+
+  countPlants(room: Room): number {
+    return Object.keys(room.plants)?.length
   }
 }

@@ -1,0 +1,36 @@
+<form [formGroup]="newPlantForm" (ngSubmit)="onSubmit()">
+    <div class="room-form">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="plantName">
+        </mat-form-field>
+
+        <mat-form-field color="accent" appearance="fill">
+            <mat-label>When Did You Get It?</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="acquiredDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <div formGroupName="needs">
+            <mat-form-field appearance="outline">
+                <mat-label>Watering Schedule</mat-label>
+                <input matInput formControlName="wateringSchedule">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Lighting Needs</mat-label>
+                <mat-select formControlName="light">
+                    <mat-option *ngFor="let condition of LightConditions | keyvalue" [value]="condition.key">
+                        {{condition.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+    </div>
+    <div class="action-buttons">
+        <button matDialogClose>Nevermind</button>
+        <button type="submit" [disabled]="!newPlantForm.valid" matDialogClose>Submit</button>
+    </div>
+</form>

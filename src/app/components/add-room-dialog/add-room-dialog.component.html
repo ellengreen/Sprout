@@ -1,0 +1,10 @@
+<form [formGroup]="newRoomForm" (ngSubmit)="onSubmit()">
+    <div class="room-form">
+        <label for="room-name">Room Name:    </label>
+        <input id="room-name" type="text" formControlName="roomName">
+    </div>
+    <div class="action-buttons">
+        <button matDialogClose>Nevermind</button>
+        <button type="submit" [disabled]="!newRoomForm.valid" matDialogClose>Submit</button>
+    </div>
+</form>

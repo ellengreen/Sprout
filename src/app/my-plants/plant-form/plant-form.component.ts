@@ -1,6 +1,5 @@
 import { Component} from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
-import { PLANTS } from '../plants';
 
 @Component({
   selector: 'app-plant-form',
@@ -10,13 +9,6 @@ import { PLANTS } from '../plants';
 
 export class PlantFormComponent {
 
-  plantList = PLANTS;
-  rooms = [
-    'Kitchen', 
-    'Bedroom', 
-    'Living Room', 
-    'Office'
-  ];
   plantForm: FormGroup;
 
   constructor (private formBuilder: FormBuilder) {
@@ -35,7 +27,7 @@ export class PlantFormComponent {
   //Adds user input to Plant List (does not persist)
   //Calls resetForm to clear input fields
   addPlant() {
-    this.plantList.push(this.plantForm.value);
+    // this.plantList.push(this.plantForm.value);
     this.resetForm(this.plantForm)
   }
 
