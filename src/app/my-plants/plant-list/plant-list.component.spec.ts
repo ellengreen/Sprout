@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {PlantFormComponent } from 'src/app/my-plants/plant-form/plant-form.component';
 import { PlantListComponent } from './plant-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ describe('PlantListComponent', () => {
   let component: PlantListComponent;
   let fixture: ComponentFixture<PlantListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [ ReactiveFormsModule, ModalModule.forRoot()],
       declarations: [ PlantListComponent, PlantFormComponent]
