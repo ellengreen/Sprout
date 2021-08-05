@@ -23,7 +23,7 @@ import { environment } from 'src/environments/environment';
 import { PlantListContainerComponent } from './containers/plant-list-container/plant-list-container.component';
 import { AddRoomDialogComponent } from './components/add-room-dialog/add-room-dialog.component';
 import { AddPlantDialogComponent } from './components/add-plant-dialog/add-plant-dialog.component';
-import { EnumArrayPipe } from './shared/pipes/enum-array.pipe';
+import { PlantDetailDialogComponent } from './components/plant-detail-dialog/plant-detail-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { EnumArrayPipe } from './shared/pipes/enum-array.pipe';
     PlantListContainerComponent,
     AddRoomDialogComponent,
     AddPlantDialogComponent,
-    EnumArrayPipe
+    PlantDetailDialogComponent
   ],
   imports: [
     BrowserModule,

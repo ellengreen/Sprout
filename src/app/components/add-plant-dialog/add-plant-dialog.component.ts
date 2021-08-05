@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { LightConditions } from 'src/app/enums/light-conditions';
 import { PlantDatabaseService } from 'src/app/services/plant-database.service';
+import { LightingConditions } from 'src/app/shared/constants/lighting-conditions';
 
 @Component({
   selector: 'app-add-plant-dialog',
@@ -12,7 +12,7 @@ import { PlantDatabaseService } from 'src/app/services/plant-database.service';
 export class AddPlantDialogComponent implements OnInit {
 
   newPlantForm: FormGroup;
-  LightConditions = LightConditions;
+  lightConditions = LightingConditions.lightConditions;
 
   constructor(public formBuilder: FormBuilder, private plantDatabaseService: PlantDatabaseService,
     @Inject(MAT_DIALOG_DATA) public data: string) { }

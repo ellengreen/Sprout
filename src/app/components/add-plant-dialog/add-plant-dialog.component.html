@@ -21,7 +21,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Lighting Needs</mat-label>
                 <mat-select formControlName="light">
-                    <mat-option *ngFor="let condition of LightConditions | keyvalue" [value]="condition.key">
+                    <mat-option *ngFor="let condition of lightConditions | keyvalue" [value]="condition.value">
                         {{condition.value}}
                     </mat-option>
                 </mat-select>

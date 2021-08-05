@@ -1,8 +1,19 @@
 <form [formGroup]="newRoomForm" (ngSubmit)="onSubmit()">
-    <div class="room-form">
-        <label for="room-name">Room Name:    </label>
-        <input id="room-name" type="text" formControlName="roomName">
-    </div>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Room Name</mat-label>
+        <input matInput formControlName="roomName">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Lighting Needs</mat-label>
+        <mat-select formControlName="light">
+            <mat-option *ngFor="let condition of lightConditions | keyvalue" [value]="condition.value">
+                {{condition.value}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
     <div class="action-buttons">
         <button matDialogClose>Nevermind</button>
         <button type="submit" [disabled]="!newRoomForm.valid" matDialogClose>Submit</button>

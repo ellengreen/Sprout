@@ -20,9 +20,9 @@
             <mat-card-title>{{room.roomName}}</mat-card-title>
           </mat-card-header>
           <mat-card-content *ngIf="room.plants">
-            <p>
-              {{countPlants(room)}} Plants
-            </p>
+            <ul *ngFor="let plant of room.plants | keyvalue">
+              <li (click)="openPlantDetailDialog(plant)">{{plant.value['plantName']}}</li>
+            </ul>
             <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
               <mat-icon>add</mat-icon>
             </button>
@@ -38,23 +38,5 @@
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
-
-
-    <!-- <div *ngFor="let room of roomList" class="room-grid">
-      <mat-card class="col">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{room.roomName}}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> 
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div> -->
   </div>
 </div>

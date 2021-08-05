@@ -1,0 +1,6 @@
+<ul *ngFor="let detail of plantValue">
+    <li>Name: {{detail.plantName}}</li>
+    <li>Had Since: {{detail.acquiredDate}}</li>
+    <li>Watering Schedule: {{detail.needs['wateringSchedule']}}</li>
+    <li>Light Needs: {{detail.needs['light']}}</li>
+</ul>

@@ -4,6 +4,7 @@ import { Room } from 'src/app/interfaces/room.interface';
 import { MatDialog } from '@angular/material';
 import { AddRoomDialogComponent } from 'src/app/components/add-room-dialog/add-room-dialog.component';
 import { AddPlantDialogComponent } from 'src/app/components/add-plant-dialog/add-plant-dialog.component';
+import { PlantDetailDialogComponent } from 'src/app/components/plant-detail-dialog/plant-detail-dialog.component';
 
 @Component({
   selector: 'app-plant-list',
@@ -16,11 +17,11 @@ export class PlantListComponent implements OnChanges {
 
   userRooms: Room[];
 
-  constructor(public plantDatabaseService: PlantDatabaseService, public roomDialog: MatDialog, public plantDialog: MatDialog) {
+  constructor(public plantDatabaseService: PlantDatabaseService, public roomDialog: MatDialog, public plantDialog: MatDialog, public plantDetailDialog: MatDialog) {
   }
 
   ngOnChanges() {
-    console.log(this.roomList)
+    // console.log(this.roomList)
   }
 
   openDialog() {
@@ -35,7 +36,11 @@ export class PlantListComponent implements OnChanges {
     });
   }
 
-  countPlants(room: Room): number {
-    return Object.keys(room.plants)?.length
+  openPlantDetailDialog(plant: any) {
+    this.plantDetailDialog.open(PlantDetailDialogComponent, {
+      data: {
+        plant: plant
+      }
+    });
   }
 }

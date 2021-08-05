@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Room } from 'src/app/interfaces/room.interface';
 import { PlantDatabaseService } from 'src/app/services/plant-database.service';
+import { LightingConditions } from 'src/app/shared/constants/lighting-conditions';
 
 @Component({
   selector: 'app-add-room-dialog',
@@ -9,13 +9,15 @@ import { PlantDatabaseService } from 'src/app/services/plant-database.service';
   styleUrls: ['./add-room-dialog.component.scss']
 })
 export class AddRoomDialogComponent implements OnInit {
-
+  lightConditions = LightingConditions.lightConditions;
   newRoomForm: FormGroup;
+
   constructor(public formBuilder: FormBuilder, private plantDatabaseService: PlantDatabaseService) { }
 
   ngOnInit(): void {
     this.newRoomForm = new FormGroup({
-      roomName: new FormControl('', [Validators.required])
+      roomName: new FormControl('', [Validators.required]),
+      light: new FormControl('', Validators.required)
     });
   }
 
