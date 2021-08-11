@@ -1,21 +1,29 @@
-<form [formGroup]="newRoomForm" (ngSubmit)="onSubmit()">
+<h1 mat-dialog-title>Create A Room</h1>
+<div mat-dialog-content>
+    <form [formGroup]="newRoomForm" (ngSubmit)="onSubmit()" class="room-form">
 
-    <mat-form-field appearance="outline">
-        <mat-label>Room Name</mat-label>
-        <input matInput formControlName="roomName">
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Room Name</mat-label>
+            <input matInput formControlName="roomName">
+        </mat-form-field>
 
-    <mat-form-field appearance="fill">
-        <mat-label>Lighting Needs</mat-label>
-        <mat-select formControlName="light">
-            <mat-option *ngFor="let condition of lightConditions | keyvalue" [value]="condition.value">
-                {{condition.value}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Lighting Needs</mat-label>
+            <mat-select formControlName="light">
+                <mat-option *ngFor="let condition of lightConditions | keyvalue" [value]="condition.value">
+                    {{condition.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-    <div class="action-buttons">
-        <button matDialogClose>Nevermind</button>
-        <button type="submit" [disabled]="!newRoomForm.valid" matDialogClose>Submit</button>
-    </div>
-</form>
+        <div *ngFor="let img of roomIconURLS">
+            <img (click)="setSelected(img.url)" [src]="img.url" style="width: 100px">
+        </div>
+
+        <div class="action-buttons">
+            <button mat-button color="accent" matDialogClose>Nevermind</button>
+            <button mat-flat-button color="primary" type="submit" [disabled]="!newRoomForm.valid"
+                matDialogClose>Submit</button>
+        </div>
+    </form>
+</div>

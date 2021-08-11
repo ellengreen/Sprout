@@ -24,6 +24,7 @@ import { PlantListContainerComponent } from './containers/plant-list-container/p
 import { AddRoomDialogComponent } from './components/add-room-dialog/add-room-dialog.component';
 import { AddPlantDialogComponent } from './components/add-plant-dialog/add-plant-dialog.component';
 import { PlantDetailDialogComponent } from './components/plant-detail-dialog/plant-detail-dialog.component';
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -64,10 +65,11 @@ import { PlantDetailDialogComponent } from './components/plant-detail-dialog/pla
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    CarouselModule
   ],
   providers: [],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

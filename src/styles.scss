@@ -9,3 +9,43 @@ body {
     margin: 0;
     font-family: Andale Mono, monospace;
 }
+
+.mat-dialog-container {
+    background-color: white !important;
+}
+
+.mat-dialog-title {
+    color: #34623f;
+    font-family: Andale Mono, monospace;
+}
+
+.mat-card {
+    background-color: #fff;
+    color: #34623f;
+    font-family: Andale Mono, monospace;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #34623f;
+}
+
+.mat-select-value {
+    color: #34623f;
+}
+
+.mat-form-field-label {
+    color: #34623f;
+}
+.mat-form-field-appearance-outline {
+    color: #34623f !important;
+}
+
+.mat-form-field .mat-focused .mat-form-field-label {
+    color: #828C51 !important;
+}
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #34623f;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: #34623f !important;
+}

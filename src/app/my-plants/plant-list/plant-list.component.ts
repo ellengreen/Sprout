@@ -14,14 +14,21 @@ import { PlantDetailDialogComponent } from 'src/app/components/plant-detail-dial
 
 export class PlantListComponent implements OnChanges {
   @Input() roomList: Room[];
+  responsiveOptions;
 
   userRooms: Room[];
 
   constructor(public plantDatabaseService: PlantDatabaseService, public roomDialog: MatDialog, public plantDialog: MatDialog, public plantDetailDialog: MatDialog) {
+    this.responsiveOptions = [
+      {
+        breakpoint: '1024px',
+        numVisible: 1,
+        numScroll: 3
+      }
+    ];
   }
 
   ngOnChanges() {
-    // console.log(this.roomList)
   }
 
   openDialog() {

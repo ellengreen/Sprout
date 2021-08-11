@@ -13,30 +13,37 @@
       <mat-icon>add</mat-icon>
     </button>
 
-    <mat-grid-list cols="4" rowHeight="300px" [gutterSize]="'10px'">
-      <mat-grid-tile *ngFor="let room of roomList">
-        <mat-card class="room-card">
-          <mat-card-header>
-            <mat-card-title>{{room.roomName}}</mat-card-title>
-          </mat-card-header>
-          <mat-card-content *ngIf="room.plants">
-            <ul *ngFor="let plant of room.plants | keyvalue">
-              <li (click)="openPlantDetailDialog(plant)">{{plant.value['plantName']}}</li>
-            </ul>
-            <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
-              <mat-icon>add</mat-icon>
-            </button>
-          </mat-card-content>
-          <mat-card-content *ngIf="!room.plants">
-            <p>
-              You don't have any plants in this room yet!
-            </p>
-            <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
-              <mat-icon>add</mat-icon>
-            </button>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
+    <div class="content-section implementation room-carousel">
+      <div class="card">
+          <p-carousel [value]="roomList" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1"
+          [circular]="true" [autoplayInterval]="0" [responsiveOptions]="responsiveOptions">
+              <ng-template let-room pTemplate="item">
+                <mat-card class="room-card mat-elevation-z0">
+                  <mat-card-header>
+                    <mat-card-title>{{room.roomName}}</mat-card-title>
+                  </mat-card-header>
+                  <img mat-card-image src={{room.roomImage}}/>
+                  <mat-card-content *ngIf="room.plants">
+                    <ul *ngFor="let plant of room.plants | keyvalue">
+                      <li (click)="openPlantDetailDialog(plant)">{{plant.value['plantName']}}</li>
+                    </ul>
+                    <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
+                      <mat-icon>add</mat-icon>
+                    </button>
+                  </mat-card-content>
+                  <mat-card-content *ngIf="!room.plants">
+                    <p>
+                      You don't have any plants in this room yet!
+                    </p>
+                    <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
+                      <mat-icon>add</mat-icon>
+                    </button>
+                  </mat-card-content>
+                </mat-card>
+              </ng-template>
+          </p-carousel>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -1,11 +1,12 @@
 .room-form {
     margin: 1.25rem;
-}
+    display: block;
 
-.action-buttons {
-    float: right;
+    .action-buttons {
+        float: right;
 
-    button {
-        margin-left: 1rem;
+        button {
+            margin-left: 1rem;
+        }
     }
 }

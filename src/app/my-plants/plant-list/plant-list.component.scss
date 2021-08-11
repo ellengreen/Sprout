@@ -5,7 +5,7 @@
     background-size: cover;
 
     .no-rooms-prompt {
-        color: green;
+        color: #34623f;
         padding: 13rem 15rem 0 4rem;
 
         h1 {
@@ -25,6 +25,14 @@
 
     .room-container {
         padding: 3rem;
+
+        .room-carousel {
+            margin-top: 2rem;
+            .card {
+                background-color: transparent;
+                border: 0;
+            }
+        }
         .room-card {
             width: 22rem;
         }
