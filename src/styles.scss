@@ -19,10 +19,6 @@ body {
     font-family: Andale Mono, monospace;
 }
 
-.mat-card-subtitle {
-    color: #34623f;
-}
-
 .mat-card {
     background-color: #fff;
     color: #34623f;
@@ -30,6 +26,10 @@ body {
 
     .mat-card-header .mat-card-title {
         font-size: 2rem;
+    }
+
+    .mat-card-subtitle {
+        color: #34623f;
     }
 
     .mat-card-actions {
@@ -40,26 +40,11 @@ body {
     }
 }
 
-.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #34623f;
+.mat-button, .mat-icon-button, .mat-stroked-button {
+    color: #828C51 !important;
 }
-
-.mat-select-value {
-    color: #34623f;
-}
-
-.mat-form-field-label {
-    color: #34623f;
-}
-.mat-form-field-appearance-outline {
-    color: #34623f !important;
-}
-
-.mat-form-field .mat-focused .mat-form-field-label {
-    color: #828c51 !important;
-}
-.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-    color: #34623f;
+.mat-input-element {
+    color: #828C51 !important;
 }
 
 .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
@@ -84,8 +69,4 @@ body {
 .mat-raised-button[disabled][disabled] {
     background-color: lightgray;
     color: #828c51;
-}
-
-.mat-card-text {
-    display: inline-flex;
 }

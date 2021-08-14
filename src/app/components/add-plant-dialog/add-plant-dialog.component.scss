@@ -1,0 +1,18 @@
+.plant-form {
+    margin: 1.25rem;
+    display: block;
+
+    .form-fields {
+        .mat-form-field {
+            width: 100%;
+        }
+    }
+
+    .action-buttons {
+        float: right;
+
+        button {
+            margin-left: 1rem;
+        }
+    }
+}
