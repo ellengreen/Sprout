@@ -1,21 +1,19 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
-  <a class="navbar-brand" href="#">Sprout</a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
+<mat-toolbar>
+  <span>Sprout</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon">
+    <a href="plants">
+      <mat-icon>grass</mat-icon>
+    </a>
   </button>
-
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="plants">Plant Tracker</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="obituary">In Memorium</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="profile">Profile</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+  <button mat-icon-button class="example-icon">
+    <a href="obituary">
+      <mat-icon>sentiment_very_dissatisfied</mat-icon>
+    </a>
+  </button>
+  <button mat-icon-button class="example-icon">
+    <a href="profile">
+      <mat-icon>account_circle</mat-icon>
+    </a>
+  </button>
+</mat-toolbar>
