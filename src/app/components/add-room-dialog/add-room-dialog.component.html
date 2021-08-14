@@ -9,7 +9,7 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Lighting Needs</mat-label>
+                <mat-label>Type of Lighting</mat-label>
                 <mat-select formControlName="light">
                     <mat-option *ngFor="let condition of lightConditions | keyvalue" [value]="condition.value">
                         {{condition.value}}

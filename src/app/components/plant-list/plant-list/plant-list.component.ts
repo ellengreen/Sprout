@@ -14,18 +14,10 @@ import { PlantDetailDialogComponent } from 'src/app/components/plant-detail-dial
 
 export class PlantListComponent implements OnChanges {
   @Input() roomList: Room[];
-  responsiveOptions;
 
   userRooms: Room[];
 
-  constructor(public plantDatabaseService: PlantDatabaseService, public roomDialog: MatDialog, public plantDialog: MatDialog, public plantDetailDialog: MatDialog) {
-    this.responsiveOptions = [
-      {
-        breakpoint: '1024px',
-        numVisible: 1,
-        numScroll: 3
-      }
-    ];
+  constructor(public plantDatabaseService: PlantDatabaseService, public roomDialog: MatDialog) {
   }
 
   ngOnChanges() {
@@ -35,19 +27,4 @@ export class PlantListComponent implements OnChanges {
     const dialogRef = this.roomDialog.open(AddRoomDialogComponent);
   }
 
-  openPlantDialog(room: string) {
-    this.plantDialog.open(AddPlantDialogComponent, {
-      data: {
-        roomKey: room
-      }
-    });
-  }
-
-  openPlantDetailDialog(plant: any) {
-    this.plantDetailDialog.open(PlantDetailDialogComponent, {
-      data: {
-        plant: plant
-      }
-    });
-  }
 }

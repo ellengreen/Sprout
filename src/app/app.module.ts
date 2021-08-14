@@ -27,6 +27,7 @@ import { DeadPlantsContainerComponent } from './containers/dead-plants-container
 import { ProfileContainerComponent } from './containers/profile-container/profile-container.component';
 import { DeadPlantsComponent } from './components/dead-plants/dead-plants.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RoomCarouselComponent } from './components/room-carousel/room-carousel.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     DeadPlantsContainerComponent,
     ProfileContainerComponent,
     DeadPlantsComponent,
-    ProfileComponent
+    ProfileComponent,
+    RoomCarouselComponent
   ],
   imports: [
     BrowserModule,

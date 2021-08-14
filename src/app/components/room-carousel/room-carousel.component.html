@@ -1,0 +1,40 @@
+<p-carousel [value]="roomList" styleClass="custom-carousel" [numVisible]="4" [numScroll]="1" [circular]="true"
+[autoplayInterval]="0" [responsiveOptions]="responsiveOptions">
+<ng-template let-room pTemplate="item">
+  <mat-card class="room-card mat-elevation-z0">
+    <mat-card-header>
+      <mat-card-title>{{room.roomName}}</mat-card-title>
+      <mat-card-subtitle>{{room.light}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <img mat-card-image src={{room.roomImage}} />
+    </mat-card-content>
+
+    <mat-card-actions>
+      <div *ngIf="room.plants" class="card-text"> 
+        <ul *ngFor="let plant of room.plants | keyvalue">
+          <li (click)="openPlantDetailDialog(plant)">{{plant.value['plantName']}}</li>
+        </ul>
+        <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)" #tooltip="matTooltip"
+        matTooltip="Add Plants"
+        [matTooltipPosition]="'above'">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      <div *ngIf="!room.plants" class="card-text">
+        <p>
+          No plants yet <mat-icon>sentiment_dissatisfied</mat-icon>
+        </p>
+        <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)" #tooltip="matTooltip"
+        matTooltip="Add Plants"
+        [matTooltipPosition]="'above'">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </mat-card-actions>
+
+  </mat-card>
+</ng-template>
+</p-carousel>

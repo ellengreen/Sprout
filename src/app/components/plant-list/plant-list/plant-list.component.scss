@@ -33,27 +33,6 @@
                 border: 0;
             }
         }
-        .room-card {
-            width: 22rem;
-            height: 32rem;
-
-            img {
-                padding: 1rem;
-            }
-
-            .card-text {
-                display: inline-flex;
-                width: 100%;
-
-                p {
-                    margin-top: 1rem;
-                }
-            }
-
-            button {
-                margin-left: auto;
-            }
-        }
 
         #add-room-button {
             position: absolute;
