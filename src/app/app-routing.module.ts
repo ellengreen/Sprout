@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { MapViewComponent } from './explore-shops/map-view/map-view.component';
 import { PlantListContainerComponent } from './containers/plant-list-container/plant-list-container.component';
+import { DeadPlantsContainerComponent } from './containers/dead-plants-container/dead-plants-container.component';
+import { ProfileContainerComponent } from './containers/profile-container/profile-container.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,10 @@ const routes: Routes = [
     path: 'plants', component: PlantListContainerComponent
   },
   {
-    path: 'map', component: MapViewComponent
+    path: 'obituary', component: DeadPlantsContainerComponent
+  },
+  {
+    path: 'profile', component: ProfileContainerComponent
   }
 ];
 

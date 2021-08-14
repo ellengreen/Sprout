@@ -1,0 +1,51 @@
+.plant-list-container {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../../assets/images/corner-monstera.jpeg);
+    background-size: cover;
+
+    .no-rooms-prompt {
+        color: #34623f;
+        padding: 13rem 15rem 0 4rem;
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h3 {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        button {
+            background-color: white;
+        }
+    }
+
+    .room-container {
+        padding: 3rem;
+        height: 100vh;
+
+        .room-carousel {
+            margin-top: 2rem;
+            .card {
+                background-color: transparent;
+                border: 0;
+            }
+        }
+        .room-card {
+            width: 22rem;
+            height: 30rem;
+
+            img {
+                padding: 1rem;
+            }
+        }
+
+        #add-room-button {
+            position: absolute;
+            bottom: 3rem;
+        }
+    }
+}

@@ -8,11 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { PlantListComponent } from './my-plants/plant-list/plant-list.component';
-import { MapViewComponent } from './explore-shops/map-view/map-view.component';
+import { PlantListComponent } from './components/plant-list/plant-list/plant-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PlantFormComponent } from './my-plants/plant-form/plant-form.component';
-import { WeatherComponent } from './explore-shops/weather/weather.component';
 import { NavComponent } from './nav/nav.component';
 import { MatButtonModule, MatCardModule, MatDatepickerModule, MatDialogModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatNativeDateModule, MatSelectModule } from '@angular/material';
 import { AngularFireModule } from '@angular/fire';
@@ -25,20 +22,27 @@ import { AddRoomDialogComponent } from './components/add-room-dialog/add-room-di
 import { AddPlantDialogComponent } from './components/add-plant-dialog/add-plant-dialog.component';
 import { PlantDetailDialogComponent } from './components/plant-detail-dialog/plant-detail-dialog.component';
 import { CarouselModule } from 'primeng/carousel';
+import { AddRoomButtonComponent } from './components/add-room-button/add-room-button.component';
+import { DeadPlantsContainerComponent } from './containers/dead-plants-container/dead-plants-container.component';
+import { ProfileContainerComponent } from './containers/profile-container/profile-container.component';
+import { DeadPlantsComponent } from './components/dead-plants/dead-plants.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PlantListComponent,
-    MapViewComponent,
-    PlantFormComponent,
-    WeatherComponent,
     NavComponent,
     PlantListContainerComponent,
     AddRoomDialogComponent,
     AddPlantDialogComponent,
-    PlantDetailDialogComponent
+    PlantDetailDialogComponent,
+    AddRoomButtonComponent,
+    DeadPlantsContainerComponent,
+    ProfileContainerComponent,
+    DeadPlantsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

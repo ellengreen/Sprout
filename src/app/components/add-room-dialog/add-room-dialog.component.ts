@@ -13,23 +13,39 @@ export class AddRoomDialogComponent implements OnInit {
   roomIconURLS = [
     {
       id: 0,
-      url: '../../../assets/room-icons/bedroom.png'
+      url: '../../../assets/room-icons/1.png'
     },
     {
       id: 1,
-      url: '../../../assets/room-icons/coffee.png'
+      url: '../../../assets/room-icons/2.png'
     },
     {
       id: 2,
-      url: '../../../assets/room-icons/kitchen.png'
+      url: '../../../assets/room-icons/3.png'
     },
     {
       id: 3,
-      url: '../../../assets/room-icons/living-room1.png'
+      url: '../../../assets/room-icons/4.png'
     },
     {
       id: 4,
-      url: '../../../assets/room-icons/living-room2.png'
+      url: '../../../assets/room-icons/5.png'
+    },
+    {
+      id: 5,
+      url: '../../../assets/room-icons/6.png'
+    },
+    {
+      id: 6,
+      url: '../../../assets/room-icons/7.png'
+    },
+    {
+      id: 7,
+      url: '../../../assets/room-icons/8.png'
+    },
+    {
+      id: 8,
+      url: '../../../assets/room-icons/9.png'
     }
   ];
   roomSelected: string;

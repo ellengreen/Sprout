@@ -1,0 +1,55 @@
+<app-nav></app-nav>
+<div class="plant-list-container">
+  <div *ngIf="!roomList?.length" class="no-rooms-prompt">
+    <h1>You don't have anywhere to put your plants!</h1>
+    <h3>Let's fix that. Add a new room to your profile</h3>
+    <app-add-room-button></app-add-room-button>
+  </div>
+
+  <div *ngIf="roomList?.length" class="room-container">
+
+    <div class="content-section implementation room-carousel">
+      <div class="card">
+        <p-carousel [value]="roomList" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
+          [autoplayInterval]="0" [responsiveOptions]="responsiveOptions">
+          <ng-template let-room pTemplate="item">
+            <mat-card class="room-card mat-elevation-z0">
+              <mat-card-header>
+                <mat-card-title>{{room.roomName}}</mat-card-title>
+                <mat-card-subtitle>{{room.light}}</mat-card-subtitle>
+              </mat-card-header>
+      
+              <mat-card-content>
+                <img mat-card-image src={{room.roomImage}} />
+              </mat-card-content>
+
+              <mat-card-actions>
+                <div *ngIf="room.plants" class="card-text"> 
+                  <ul *ngFor="let plant of room.plants | keyvalue">
+                    <li (click)="openPlantDetailDialog(plant)">{{plant.value['plantName']}}</li>
+                  </ul>
+                  <!-- <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
+                    <mat-icon>add</mat-icon>
+                  </button> -->
+                </div>
+
+                <div *ngIf="!room.plants" class="card-text">
+                  <p>
+                    You don't have any plants in this room yet!
+                  </p>
+                  <!-- <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
+                    <mat-icon>add</mat-icon>
+                  </button> -->
+                </div>
+              </mat-card-actions>
+   
+            </mat-card>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+    <div id="add-room-button">
+      <app-add-room-button></app-add-room-button>
+    </div>
+  </div>
+</div>

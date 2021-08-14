@@ -19,11 +19,26 @@ body {
     font-family: Andale Mono, monospace;
 }
 
+.mat-card-subtitle {
+    color: #34623f;
+}
+
 .mat-card {
     background-color: #fff;
     color: #34623f;
     font-family: Andale Mono, monospace;
+
+    .mat-card-header .mat-card-title {
+        font-size: 2rem;
+    }
+
+    .mat-card-actions {
+        position: absolute;
+        bottom: 0;
+        padding: 1rem;
+    }
 }
+
 .mat-form-field-appearance-outline .mat-form-field-outline {
     color: #34623f;
 }
@@ -40,7 +55,7 @@ body {
 }
 
 .mat-form-field .mat-focused .mat-form-field-label {
-    color: #828C51 !important;
+    color: #828c51 !important;
 }
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
     color: #34623f;
