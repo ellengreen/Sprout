@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { Plant } from 'src/app/interfaces/plant';
+import { Plant } from 'src/app/shared/interfaces/plant';
 
 @Component({
   selector: 'app-plant-detail-dialog',

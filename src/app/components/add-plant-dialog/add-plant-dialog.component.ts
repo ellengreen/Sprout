@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { PlantDatabaseService } from 'src/app/services/plant-database.service';
+import { PlantDatabaseService } from 'src/app/shared/services/plant-database.service';
 import { LightingConditions } from 'src/app/shared/constants/lighting-conditions';
 
 @Component({

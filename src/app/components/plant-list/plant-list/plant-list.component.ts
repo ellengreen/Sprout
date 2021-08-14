@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { PlantDatabaseService } from 'src/app/services/plant-database.service';
-import { Room } from 'src/app/interfaces/room.interface';
+import { PlantDatabaseService } from 'src/app/shared/services/plant-database.service';
+import { Room } from 'src/app/shared/interfaces/room.interface';
 import { MatDialog } from '@angular/material';
 import { AddRoomDialogComponent } from 'src/app/components/add-room-dialog/add-room-dialog.component';
 import { AddPlantDialogComponent } from 'src/app/components/add-plant-dialog/add-plant-dialog.component';

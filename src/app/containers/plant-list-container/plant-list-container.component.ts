@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Room } from 'src/app/interfaces/room.interface';
-import { PlantDatabaseService } from 'src/app/services/plant-database.service';
+import { Room } from 'src/app/shared/interfaces/room.interface';
+import { PlantDatabaseService } from 'src/app/shared/services/plant-database.service';
 import { map } from 'rxjs/operators/';
 
 @Component({
