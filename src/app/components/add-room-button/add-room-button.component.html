@@ -1,3 +1,5 @@
-<button mat-fab color="accent" (click)="openDialog()">
+<button mat-fab color="accent" (click)="openDialog()" #tooltip="matTooltip" 
+    matTooltip="Add A New Room"
+    [matTooltipPosition]="'above'">
     <mat-icon>add</mat-icon>
 </button>

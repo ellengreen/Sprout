@@ -27,18 +27,22 @@
                   <ul *ngFor="let plant of room.plants | keyvalue">
                     <li (click)="openPlantDetailDialog(plant)">{{plant.value['plantName']}}</li>
                   </ul>
-                  <!-- <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
+                  <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)" #tooltip="matTooltip"
+                  matTooltip="Add Plants"
+                  [matTooltipPosition]="'above'">
                     <mat-icon>add</mat-icon>
-                  </button> -->
+                  </button>
                 </div>
 
                 <div *ngIf="!room.plants" class="card-text">
                   <p>
-                    You don't have any plants in this room yet!
+                    No plants yet <mat-icon>sentiment_dissatisfied</mat-icon>
                   </p>
-                  <!-- <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)">
+                  <button mat-mini-fab color="primary" (click)="openPlantDialog(room.key)" #tooltip="matTooltip"
+                  matTooltip="Add Plants"
+                  [matTooltipPosition]="'above'">
                     <mat-icon>add</mat-icon>
-                  </button> -->
+                  </button>
                 </div>
               </mat-card-actions>
    
