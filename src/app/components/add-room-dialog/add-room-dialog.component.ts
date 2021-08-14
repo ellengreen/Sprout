@@ -51,8 +51,9 @@ export class AddRoomDialogComponent implements OnInit {
   roomSelected: string;
   newRoomForm: FormGroup;
 
-  setSelected(roomImage: string) {
-    this.newRoomForm.get('roomImage').setValue(roomImage);
+  setSelected(roomImage: any) {
+    this.roomSelected = roomImage.id;
+    this.newRoomForm.get('roomImage').setValue(roomImage.url);
   }
 
   constructor(public formBuilder: FormBuilder, private plantDatabaseService: PlantDatabaseService) { }

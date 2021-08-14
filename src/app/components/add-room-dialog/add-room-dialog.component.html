@@ -2,28 +2,32 @@
 <div mat-dialog-content>
     <form [formGroup]="newRoomForm" (ngSubmit)="onSubmit()" class="room-form">
 
-        <mat-form-field appearance="outline">
-            <mat-label>Room Name</mat-label>
-            <input matInput formControlName="roomName">
-        </mat-form-field>
+        <div class="form-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Room Name</mat-label>
+                <input matInput formControlName="roomName">
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Lighting Needs</mat-label>
-            <mat-select formControlName="light">
-                <mat-option *ngFor="let condition of lightConditions | keyvalue" [value]="condition.value">
-                    {{condition.value}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-
-        <div *ngFor="let img of roomIconURLS">
-            <img (click)="setSelected(img.url)" [src]="img.url" style="width: 100px">
+            <mat-form-field appearance="outline">
+                <mat-label>Lighting Needs</mat-label>
+                <mat-select formControlName="light">
+                    <mat-option *ngFor="let condition of lightConditions | keyvalue" [value]="condition.value">
+                        {{condition.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
 
-        <div class="action-buttons">
+        <label>Choose A Room Image</label>
+        <div class="grid-container">
+            <ng-container *ngFor="let img of roomIconURLS">
+                <img [ngClass]="{'room-selected': roomSelected === img.id}" (click)="setSelected(img)" [src]="img.url" style="width: 150px">
+            </ng-container>
+        </div>
+
+        <div mat-dialog-actions class="action-buttons">
             <button mat-button color="accent" matDialogClose>Nevermind</button>
-            <button mat-flat-button color="primary" type="submit" [disabled]="!newRoomForm.valid"
-                matDialogClose>Submit</button>
+            <button mat-flat-button color="primary" type="submit" [disabled]="!newRoomForm.valid" matDialogClose>Submit</button>
         </div>
     </form>
 </div>
